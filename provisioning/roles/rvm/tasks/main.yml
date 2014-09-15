@@ -1,0 +1,9 @@
+---
+- name: Download rvm
+  get_url: url=https://get.rvm.io dest=/tmp/rvm
+
+- name: Install rvm
+  command: bash rvm stable --ruby=1.9.3 chdir=/tmp
+
+- name: Add source profile file
+  lineinfile: line="source ~/.profile" dest=~/.bash_profile state=present create=yes

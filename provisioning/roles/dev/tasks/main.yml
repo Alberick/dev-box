@@ -1,0 +1,30 @@
+---
+# Install global gems
+# This is likely to fail at some point due to the ruby path, might need to 
+# change it later on, meh for now
+- name: Install global gems
+  gem: name={{ item }} executable=~/.rvm/rubies/ruby-1.9.3-p547/bin/gem
+  with_items:
+      - tmuxinator
+      - sass
+
+# Install global node modules
+- name: Install global node modules
+  command: npm install {{ item }} -g
+  with_items: 
+    - nodemon
+    - node-inspector
+    - jshint
+    - yo
+    - generator-angular-fullstack
+    - gulp
+    - generator-gulp-angular
+
+# Install python-postgres packages
+- name: Install postgres system packages
+  sudo: true
+  apt: name={{ item }} state=latest
+  with_items:
+      - python-psycopg2
+      - libpq-dev
+      - python-dev
