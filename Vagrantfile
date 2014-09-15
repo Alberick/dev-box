@@ -7,7 +7,7 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define 'devserver' do |devserver|
-    devserver.vm.box = "ubuntu/trusty32"
+    devserver.vm.box = "ubuntu/trusty64"
 
     devserver.vm.network "private_network", ip: "192.168.33.10"
 
