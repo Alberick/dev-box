@@ -14,7 +14,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     devserver.vm.synced_folder "../Repos", "/home/vagrant/repos"
 
     devserver.vm.provider :virtualbox do |vb|
-      vb.customize ["modifyvm", :id, "--memory", "512"]
+      vb.customize ["modifyvm", :id, "--memory", "1024"]
     end
 
     # Enable provision with ansible
