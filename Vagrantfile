@@ -11,17 +11,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     devserver.vm.network "private_network", ip: "192.168.33.10"
 
-    devserver.vm.synced_folder "../Repos", "/home/vagrant/repos"
+    devserver.vm.synced_folder "./provisioning", "/home/vagrant/provisioning"
 
     devserver.vm.provider :virtualbox do |vb|
       vb.customize ["modifyvm", :id, "--memory", "1024"]
     end
-
-    # Enable provision with ansible
-    devserver.vm.provision 'ansible' do |ansible|
-      ansible.playbook = 'provisioning/playbook.yml'
-      ansible.inventory_path = 'provisioning/inventory/development'
-    end
   end
-
 end
