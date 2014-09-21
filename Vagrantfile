@@ -6,15 +6,14 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-  config.vm.define 'devserver' do |devserver|
-    devserver.vm.box = "ubuntu/trusty64"
+    config.vm.box = "ubuntu/trusty64"
 
-    devserver.vm.network "private_network", ip: "192.168.33.10"
+    config.vm.network "forwarded_port", guest: 8000, host: 8000
 
-    devserver.vm.synced_folder "./provisioning", "/home/vagrant/provisioning"
+    config.vm.synced_folder "./provisioning", "/home/vagrant/provisioning"
 
-    devserver.vm.provider :virtualbox do |vb|
+    config.vm.provider :virtualbox do |vb|
       vb.customize ["modifyvm", :id, "--memory", "1024"]
     end
-  end
+
 end
