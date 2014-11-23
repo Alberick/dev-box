@@ -11,7 +11,15 @@
   user: name=vagrant append=yes groups=docker
   sudo: true
   notify:
-      - restart docker.io
+      -restart docker.io
+
+- name: Install python-dev dependecy
+  command: apt-get install -y python-dev
+  sudo: true
+
+- name: Install libenvet dev dependecy
+  command: apt-get install -y libevent-dev
+  sudo: true 
 
 - name: Install fig to manage docker
   command: pip install -U fig
