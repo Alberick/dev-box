@@ -4,6 +4,7 @@
   with_items:
     - vim
     - exuberant-ctags
+    - ack-grep
   sudo: true
 
 - name: Add vim as the default editor
@@ -21,3 +22,6 @@
 
 - name: Create symlink to hybrid theme
   file: src=~/.vim/colors/hybrid/colors/hybrid.vim dest=~/.vim/colors/hybrid.vim state=link
+
+- name: Copy ackrc to home
+  copy: src=ackrc dest=~/.ackrc 
