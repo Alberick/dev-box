@@ -1,4 +1,7 @@
 ---
+- name: Download mpapi key 
+  command: gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3 
+
 - name: Download rvm
   get_url: url=https://get.rvm.io dest=/tmp/rvm
 
