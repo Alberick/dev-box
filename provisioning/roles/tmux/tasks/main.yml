@@ -10,6 +10,5 @@
 - name: Copy settings
   copy: src=tmux.conf dest=~/.tmux.conf
 
-- name: Set correct colors when interacting with vim
-  lineinfile: line="alias tmux='tmux -2'" dest=~/.bash_profile state=present create=yes
-
+- name: Install tmux package manager
+  git: repo=https://github.com/tmux-plugins/tpm dest=~/.tmux/plugins/tpm

@@ -8,18 +8,6 @@
       - tmuxinator
       - sass
 
-# Install global node modules
-- name: Install global node modules
-  command: npm install {{ item }} -g
-  with_items: 
-    - nodemon
-    - node-inspector
-    - jshint
-    - yo
-    - generator-angular-fullstack
-    - gulp
-    - generator-gulp-angular
-
 # Install python-postgres packages
 - name: Install postgres system packages
   sudo: true

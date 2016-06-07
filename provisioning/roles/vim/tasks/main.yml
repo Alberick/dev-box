@@ -7,9 +7,6 @@
     - ack-grep
   sudo: true
 
-- name: Add vim as the default editor
-  lineinfile: line="export EDITOR='vim'" state=present dest=~/.bash_profile create=yes
-
 # Download settings from own repository
 - name: Download vim folder
   git: repo=https://github.com/radyz/vim-radyz.git dest=~/.vim

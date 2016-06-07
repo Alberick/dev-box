@@ -6,23 +6,21 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-    config.vm.box = "ubuntu/trusty64"
+    config.vm.define "dev" do |dev|
 
-    config.vm.network "forwarded_port", guest: 3000, host: 3000
-    config.vm.network "forwarded_port", guest: 8000, host: 8000
-    config.vm.network "forwarded_port", guest: 8000, host: 9000
-    config.vm.network "forwarded_port", guest: 5555, host: 5555
-    config.vm.network "forwarded_port", guest: 5432, host: 5432
+        dev.vm.box = "ubuntu/trusty64"
 
-    config.vm.synced_folder "./provisioning", "/home/vagrant/provisioning"
-    config.vm.synced_folder "../shared_folder", "/home/vagrant/shared_folder"
+        dev.vm.synced_folder "./provisioning", "/home/vagrant/provisioning"
+        dev.vm.synced_folder "../shared_folder", "/home/vagrant/shared_folder"
 
-    config.vm.provider :virtualbox do |vb|
-      vb.customize ["modifyvm", :id, "--memory", "1024"]
-    end
+        dev.vm.provider :virtualbox do |vb|
+          vb.customize ["modifyvm", :id, "--memory", "1024"]
+        end
 
-    config.vm.provision 'ansible' do |ansible|
-      ansible.playbook = 'provisioning/playbook.yml'
+        dev.vm.provision 'ansible' do |ansible|
+          ansible.playbook = 'provisioning/playbook.yml'
+        end
+
     end
 
 end
