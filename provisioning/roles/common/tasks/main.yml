@@ -10,3 +10,4 @@
     - unzip
     - curl
     - wget
+    - htop
