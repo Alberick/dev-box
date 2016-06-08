@@ -13,11 +13,22 @@
   notify:
       - restart docker.io
 
+- name: Fetch kernel name
+  shell: uname -s
+  ignore_errors: yes
+  register: kernel
+
+- name: Fetch machine hardware name
+  shell: uname -m
+  ignore_errors: yes
+  register: machine
+
 - name: Download docker-compose
-  get_url: url=https://github.com/docker/compose/releases/download/1.7.1/docker-compose-`uname -s`-`uname -m` dest=/tmp/docker-compose
+  get_url: url=https://github.com/docker/compose/releases/download/1.7.1/docker-compose-{{ kernel.stdout }}-{{ machine.stdout }} dest=/tmp/docker-compose
 
-- name: Install docker-compose
-  file: src=/tmp/docker-compose mode=+x 
+- name: Set docker-compose permissions
+  file: path=/tmp/docker-compose mode=0755
 
-- name: Set docker-compose globally
-  copy: src=/tmp/docker-compose dest=/usr/local/bin/docker-compose
+- name: Set global docker-compose command
+  command: mv /tmp/docker-compose /usr/local/bin/docker-compose
+  sudo: true
