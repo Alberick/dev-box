@@ -91,31 +91,6 @@ BULLETTRAIN_DIR_FG=black
 BULLETTRAIN_DIR_CONTEXT_SHOW=true
 # ENDBULLETTRAIN
 
-# VIRTUALENVWRAPPER
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
-source /usr/local/bin/virtualenvwrapper.sh
-# ENDVIRTUALENVWRAPPER
-
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# place this after nvm initialization!
-autoload -U add-zsh-hook
-load-nvmrc() {
-  if [[ -f .nvmrc && -r .nvmrc ]]; then
-    nvm use
-  elif [[ $(nvm version) != $(nvm version default)  ]]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
-
-# ENDNVM
-
 # ANDROID
 export PATH="$HOME/android-sdk-macos/tools:$HOME/android-sdk-macos/platform-tools:$PATH"
 # ENDANDROID

@@ -4,3 +4,11 @@
 
 - name: Install rvm
   command: bash rvm stable --ruby=1.9.3 chdir=/tmp
+
+- name: Install global gems
+  gem: name={{ item }}
+  with_items:
+      - tmuxinator
+
+- name: Add tmuxinator to zshrc
+  lineinfile: dest=~/.zshrc line="source ~/.bin/tmuxinator.zsh"

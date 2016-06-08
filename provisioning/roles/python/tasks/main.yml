@@ -15,11 +15,18 @@
     - virtualenvwrapper
 
 - name: Add workon_home variable for virtualenvwrapper
-  lineinfile: line='export WORKON_HOME=$HOME/.virtualenvs' dest=~/.bash_profile create=yes
+  lineinfile: line='export WORKON_HOME=$HOME/.virtualenvs' dest=~/.zshrc create=yes
 
 - name: Add project_home variable for virtualenvwrapper
-  lineinfile: line='export PROJECT_HOME=$HOME/repos' dest=~/.bash_profile create=yes
+  lineinfile: line='export PROJECT_HOME=$HOME/repos' dest=~/.zshrc create=yes
 
 - name: Source virtualenvwrapper
-  lineinfile: line="source /usr/local/bin/virtualenvwrapper.sh" dest=~/.bash_profile state=present create=yes
+  lineinfile: line="source /usr/local/bin/virtualenvwrapper.sh" dest=~/.zshrc state=present create=yes
   
+- name: Install postgres system packages
+  apt: name={{ item }} state=latest
+  with_items:
+      - python-psycopg2
+      - libpq-dev
+      - python-dev
+  sudo: true
