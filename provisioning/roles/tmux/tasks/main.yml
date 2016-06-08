@@ -4,8 +4,11 @@
   sudo: true
 
 - name: Install tmux from package repository
-  apt: name=tmux state=latest update_cache=yes
+  apt: name={{ item }} state=latest update_cache=yes
   sudo: true
+  with_items:
+    - tmux
+    - upower
 
 - name: Copy settings
   copy: src=tmux.conf dest=~/.tmux.conf
