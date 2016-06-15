@@ -11,7 +11,7 @@
   user: name=vagrant append=yes groups=docker
   sudo: true
   notify:
-      - restart docker.io
+      - restart docker
 
 - name: Fetch kernel name
   shell: uname -s
