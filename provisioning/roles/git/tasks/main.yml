@@ -8,6 +8,3 @@
 
 - name: Copy global git ignore
   copy: src=gitignore dest=~/.gitignore
-
-- name: Setup global git ignore configuration
-  command: git config --global core.excludesfile ~/.gitignore

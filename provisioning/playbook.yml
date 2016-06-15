@@ -2,15 +2,15 @@
 - hosts: all
   remote_user: vagrant
   roles:
-    #- common
-    #- git
-    #- zsh
-    #- tmux
-    #- vim
-    #- rvm
-    #- python
-    #- nvm
-    #- docker
+    - common
+    - git
+    - zsh
+    - tmux
+    - vim
+    - rvm
+    - python
+    - nvm
+    - docker
     #- android
 
 #If roles/x/tasks/main.yml exists, tasks listed therein will be added to the play
