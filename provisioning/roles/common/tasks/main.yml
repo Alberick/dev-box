@@ -11,3 +11,8 @@
     - curl
     - wget
     - htop
+    - moreutils
+    - libevent-dev
+    - libpq-dev
+    - python-dev
+    - python-psycopg2

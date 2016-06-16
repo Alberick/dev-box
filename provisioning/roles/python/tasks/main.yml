@@ -10,7 +10,7 @@
   command: pip install {{ item }}
   sudo: true
   with_items:
-    - pylint
+    - flake8
     - virtualenv
     - virtualenvwrapper
 
