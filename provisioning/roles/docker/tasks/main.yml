@@ -32,3 +32,6 @@
 - name: Set global docker-compose command
   command: mv /tmp/docker-compose /usr/local/bin/docker-compose
   sudo: true
+
+- name: Set docker-compose api version
+  lineinfile: line='export COMPOSE_API_VERSION=1.18' dest=~/.zshrc create=yes
