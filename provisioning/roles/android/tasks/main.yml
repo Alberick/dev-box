@@ -5,14 +5,14 @@
   with_items:
     - openjdk-7-jdk
     - ant
+    - gradle
+    - maven
     - lib32ncurses5
     - lib32gomp1
     - lib32z1-dev
-    - lib32bz2-dev
     - lib32ncurses5
     - lib32gomp1
     - lib32z1-dev
-    - lib32bz2-dev
 
 - name: Download Android SDK
   get_url:
