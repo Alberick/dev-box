@@ -42,7 +42,7 @@
     state=present
     create=yes
   with_items:
-    - "export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-i386"
+    - "export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64"
     - "export ANDROID_HOME=/opt/android-sdk-linux"
     - "export ANDROID_TOOLS=$ANDROID_HOME/tools/"
     - "export ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools/"
