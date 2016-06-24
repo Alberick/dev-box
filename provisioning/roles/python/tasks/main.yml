@@ -29,4 +29,6 @@
       - python-psycopg2
       - libpq-dev
       - python-dev
+      - libjpeg-dev
+      - libmemcached-dev
   sudo: true
