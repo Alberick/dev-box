@@ -1,11 +1,11 @@
 ---
 - name: update package repository
-  apt: update-cache=yes cache_valid_time=1800
-  sudo: true
+  apt: update-cache=yes cache_valid_time=1800 upgrade=dist
+  become: true
 
 - name: Install common packages
   apt: name={{ item }} state=latest
-  sudo: true
+  become: true
   with_items:
     - unzip
     - curl
@@ -16,3 +16,4 @@
     - libpq-dev
     - python-dev
     - python-psycopg2
+    - tree
