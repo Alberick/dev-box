@@ -2,11 +2,11 @@
 - hosts: all
   remote_user: vagrant
   roles:
-    - common
-#    - git
-#    - zsh
-#    - tmux
-#    - vim
+#    - common
+    - git
+    - zsh
+    - tmux
+    - vim
 #    - rvm
 #    - python
 #    - nvm

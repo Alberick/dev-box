@@ -1,0 +1,13 @@
+---
+zsh: /usr/bin/zsh
+
+# libevent release tarball
+libevent_url: https://github.com/libevent/libevent/releases/download/release-2.0.22-stable/libevent-2.0.22-stable.tar.gz
+libevent_folder: libevent-2.0.22-stable
+
+# tmux release tarball
+tmux_url: https://github.com/tmux/tmux/releases/download/2.2/tmux-2.2.tar.gz
+tmux_folder: tmux-2.2
+
+
+
