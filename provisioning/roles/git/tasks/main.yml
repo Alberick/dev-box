@@ -1,7 +1,7 @@
 ---
 - name: Install git from package repository
   apt: name=git-core
-  sudo: true
+  become: true
 
 - name: Copy global git configuration
   file: >
