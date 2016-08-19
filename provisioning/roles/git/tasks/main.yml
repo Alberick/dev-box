@@ -4,7 +4,10 @@
   sudo: true
 
 - name: Copy global git configuration
-  copy: src=gitconfig dest=~/.gitconfig
-
-- name: Copy global git ignore
-  copy: src=gitignore dest=~/.gitignore
+  file: >
+    src=~/provisioning/roles/git/files/{{item}}
+    dest=~/.{{item}}
+    state=link
+  with_items:
+    - "gitconfig"
+    - "gitignore"
