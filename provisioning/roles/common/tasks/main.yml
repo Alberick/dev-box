@@ -1,5 +1,5 @@
 ---
-- name: update package repository
+- name: update package repository and upgrade packages
   apt: update-cache=yes cache_valid_time=1800 upgrade=dist
   become: true
 
@@ -17,3 +17,7 @@
     - python-dev
     - python-psycopg2
     - tree
+    - libncurses5-dev
+    - libncursesw5-dev
+    - upower
+    - xdg-utils
