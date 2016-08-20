@@ -1,17 +1,43 @@
 ---
 - name: Import keys
-  command: gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+  shell: gpg --keyserver {{rvm}}
+  args:
+    executable: "{{zsh}}"
 
 - name: Download rvm
-  get_url: url=https://get.rvm.io dest=/tmp/rvm
+  get_url: >
+   url=https://get.rvm.io
+   dest=/tmp/rvm
 
 - name: Install rvm
-  command: bash rvm stable --ruby=1.9.3 chdir=/tmp
+  shell: bash rvm stable --ruby=1.9.3
+  args:
+    chdir: /tmp
+    executable: "{{zsh}}"
 
 - name: Install global gems
-  gem: name={{ item }}
+  shell: bash -lc "gem install {{item}}"
   with_items:
-      - tmuxinator
+    - tmuxinator
+  args:
+    executable: "{{zsh}}"
+
+- name: Create .bin directory to hold tmuxinator.zsh completion
+  file: >
+    path=~/.bin
+    state=directory
+
+- name: Download completion file from the repo
+  get_url: >
+    url={{mux_completion}}
+    dest=~/.bin/
 
 - name: Add tmuxinator to zshrc
-  lineinfile: dest=~/.zshrc line="source ~/.bin/tmuxinator.zsh"
+  blockinfile:
+    dest: ~/.zshrc
+    marker: ''
+    insertafter: EOF
+    block: |
+      # tmuxinator completion
+      source ~/.bin/tmuxinator.zsh
+      # tmuxinator completion
