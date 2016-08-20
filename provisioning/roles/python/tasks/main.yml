@@ -1,34 +1,67 @@
 ---
 - name: Download latest pip
-  get_url: url=https://bootstrap.pypa.io/{{ pip_file }} dest=/tmp
+  get_url: >
+    url=https://bootstrap.pypa.io/{{ pip_file }}
+    dest=/tmp
 
 - name: Install pip
-  command: python {{ pip_file }} chdir=/tmp
   become: true
+  shell: python {{ pip_file }}
+  args:
+    chdir: /tmp
+    executable: "{{zsh}}"
 
 - name: Install global pip packages
-  command: pip install {{ item }}
   become: true
+  shell: pip install {{ item }}
+  args:
+    executable: "{{zsh}}"
   with_items:
     - flake8
     - virtualenv
     - virtualenvwrapper
 
 - name: Add workon_home variable for virtualenvwrapper
-  lineinfile: line='export WORKON_HOME=$HOME/.virtualenvs' dest=~/.zshrc create=yes
+  blockinfile:
+    dest: ~/.zshrc
+    create: yes
+    marker: ''
+    insertafter: EOF
+    block: |
+      # virtualenv workon_home variable
+      export WORKON_HOME=$HOME/.virtualenvs
+      # virtualenv workon_home variable
 
 - name: Add project_home variable for virtualenvwrapper
-  lineinfile: line='export PROJECT_HOME=$HOME/repos' dest=~/.zshrc create=yes
+  blockinfile:
+    dest: ~/.zshrc
+    create: yes
+    marker: ''
+    insertafter: EOF
+    block: |
+      # Project home for virtualenvwrapper
+      export PROJECT_HOME=$HOME/repos
+      # Project home for virtualenvwrapper
 
 - name: Source virtualenvwrapper
-  lineinfile: line="source /usr/local/bin/virtualenvwrapper.sh" dest=~/.zshrc state=present create=yes
-  
+  blockinfile:
+    dest: ~/.zshrc
+    create: yes
+    marker: ''
+    insertafter: EOF
+    block: |
+      # virtualenv source
+      source /usr/local/bin/virtualenvwrapper.sh
+      # virtualenv source
+
 - name: Install postgres system packages
-  apt: name={{ item }} state=latest
+  become: true
+  apt: >
+    name={{ item }}
+    state=latest
   with_items:
       - python-psycopg2
       - libpq-dev
       - python-dev
       - libjpeg-dev
       - libmemcached-dev
-  become: true
