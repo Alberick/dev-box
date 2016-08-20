@@ -1,15 +1,38 @@
 ---
-- name: Install docker
-  apt: name=docker.io
-  sudo: true
+- name: Ensure apt-transport-https ca-certificates are installed
+  become: true
+  apt:
+    name={{ item }}
+    state=latest
+  with_items:
+    - apt-transport-https
+    - ca-certificates
+    - linux-image-extra-{{ansible_kernel}}
+    - linux-image-extra-virtual
 
-- name: Create docker.io symlink
-  file: src=/usr/bin/docker.io dest=/usr/local/bin/docker state=link
-  sudo: true
+- name: Add docker gpg key
+  become: true
+  apt_key: >
+    keyserver={{docker_keyserver}}
+    id={{docker_key}}
+
+- name: Add docker entry for ubuntu
+  become: true
+  apt_repository: >
+    repo='{{docker_source}}'
+    filename=docker.list
+
+- name: Install docker
+  become: true
+  apt: >
+    name=docker-engine
 
 - name: Add current user to docker group
-  user: name=vagrant append=yes groups=docker
-  sudo: true
+  become: true
+  user: >
+    name=vagrant
+    append=yes
+    groups=docker
   notify:
     - restart docker
 
@@ -24,14 +47,13 @@
   register: machine
 
 - name: Download docker-compose
-  get_url: url=https://github.com/docker/compose/releases/download/1.7.1/docker-compose-{{ kernel.stdout }}-{{ machine.stdout }} dest=/tmp/docker-compose
+  become: true
+  get_url: >
+    url={{docker_compose_url}}
+    dest={{docker_compose_path}}
 
 - name: Set docker-compose permissions
-  file: path=/tmp/docker-compose mode=0755
-
-- name: Set global docker-compose command
-  command: mv /tmp/docker-compose /usr/local/bin/docker-compose
-  sudo: true
-
-- name: Set docker-compose api version
-  lineinfile: line='export COMPOSE_API_VERSION=1.18' dest=~/.zshrc create=yes
+  become: true
+  file: >
+    path={{docker_compose_path}}
+    mode=0755
