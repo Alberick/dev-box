@@ -1,14 +1,34 @@
 ---
 - name: Download nvm
-  get_url: url=https://raw.githubusercontent.com/creationix/nvm/v0.31.4/install.sh dest=/tmp/nvm
+  get_url: >
+    url={{nvm_url}}
+    dest=/tmp/nvm
 
 - name: Install nvm
-  command: bash nvm chdir=/tmp
+  shell: bash nvm
+  args:
+    chdir: /tmp
+    executable: "{{zsh}}"
 
-- name: Activate nvm
+- name: Add activate and load NVM to .zshrc
   blockinfile:
     dest: ~/.zshrc
+    marker: ''
+    insertafter: EOF
     block: |
+      # loads and active NVM
+      export NVM_DIR="$HOME/.nvm"
+      [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+      # loads and active NVM
+
+- name: Deeper NVM integration into .zshrc
+  blockinfile:
+    dest: ~/.zshrc
+    marker: ''
+    insertafter: EOF
+    block: |
+      # NVM deeper shell integration
+      # Calling nvm use automatically in a directory with a .nvmrc file
       autoload -U add-zsh-hook
       load-nvmrc() {
         if [[ -f .nvmrc && -r .nvmrc ]]; then
@@ -20,9 +40,15 @@
       }
       add-zsh-hook chpwd load-nvmrc
       load-nvmrc
+      # NVM deeper shell integration
 
 - name: Copy global nvmrc
-  copy: src=nvmrc dest=~/.nvmrc
+  copy: >
+    src=nvmrc
+    dest=~/.nvmrc
 
-- name: Install default node
-  command: bash -c '. ~/.nvm/nvm.sh; nvm install '
+- name: install nodejs using nvm
+  shell:
+    bash -c '. /home/vagrant/.nvm/nvm.sh; nvm install '
+  args:
+    chdir: ~/
