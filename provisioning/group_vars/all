@@ -9,5 +9,29 @@ libevent_folder: libevent-2.0.22-stable
 tmux_url: https://github.com/tmux/tmux/releases/download/2.2/tmux-2.2.tar.gz
 tmux_folder: tmux-2.2
 
+# tmux package manager
+tpm: https://github.com/tmux-plugins/tpm
 
+# ruby rvm gpg key
+rvm: hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 
+# mux completion file url
+mux_completion: https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh
+
+# vim repo
+vim_repo: https://github.com/radyz/vim-radyz.git
+
+# python pip_file
+pip_file: get-pip.py
+
+# zsh repo
+zsh_repo: https://github.com/robbyrussell/oh-my-zsh.git
+
+# bullet train theme
+bullet_repo: https://github.com/caiogondim/bullet-train-oh-my-zsh-theme.git
+
+# nvm downlaod url
+nvm_url: https://raw.githubusercontent.com/creationix/nvm/v0.31.4/install.sh
+
+# docker gpg key
+docker: hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
