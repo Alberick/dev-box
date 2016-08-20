@@ -43,3 +43,9 @@ docker_source: deb https://apt.dockerproject.org/repo ubuntu-trusty main
 # docker-compose
 docker_compose_url: https://github.com/docker/compose/releases/download/1.8.0/docker-compose-{{ kernel.stdout }}-{{ machine.stdout }}
 docker_compose_path: /usr/local/bin/docker-compose
+
+# android version
+version: r24.4.1
+
+# android url
+android_url: https://dl.google.com/android/android-sdk_{{ version }}-linux.tgz
