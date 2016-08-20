@@ -34,4 +34,12 @@ bullet_repo: https://github.com/caiogondim/bullet-train-oh-my-zsh-theme.git
 nvm_url: https://raw.githubusercontent.com/creationix/nvm/v0.31.4/install.sh
 
 # docker gpg key
-docker: hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+docker_keyserver: hkp://p80.pool.sks-keyservers.net:80
+docker_key: 58118E89F3A912897C070ADBF76221572C52609D
+
+# docker source for os
+docker_source: deb https://apt.dockerproject.org/repo ubuntu-trusty main
+
+# docker-compose
+docker_compose_url: https://github.com/docker/compose/releases/download/1.8.0/docker-compose-{{ kernel.stdout }}-{{ machine.stdout }}
+docker_compose_path: /usr/local/bin/docker-compose
