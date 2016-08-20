@@ -1,21 +1,24 @@
 ---
 - name: Install vim from package repository
   apt: name={{ item }} state=latest
+  become: true
   with_items:
     - vim
     - exuberant-ctags
     - ack-grep
-  sudo: true
 
 # Download settings from own repository
 - name: Download vim folder
   git:
-    repo=https://github.com/radyz/vim-radyz.git
+    repo={{vim_repo}}
     dest=~/.vim
     force=yes
 
 - name: Create symlink to vimrc
-  file: src=~/.vim/.vimrc dest=~/.vimrc state=link
+  file: >
+    src=~/.vim/.vimrc
+    dest=~/.vimrc
+    state=link
 
 - name: Create symlink to pathogen
   file:
@@ -30,4 +33,7 @@
     state=link
 
 - name: Copy ackrc to home
-  copy: src=ackrc dest=~/.ackrc 
+  file: >
+   src=~/provisioning/roles/vim/files/ackrc
+   dest=~/.ackrc
+   state=link
