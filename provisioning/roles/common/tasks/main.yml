@@ -1,11 +1,16 @@
 ---
 - name: update package repository and upgrade packages
-  apt: update-cache=yes cache_valid_time=1800 upgrade=dist
   become: true
+  apt: >
+    update-cache=yes
+    cache_valid_time=1800
+    upgrade=dist
 
 - name: Install common packages
-  apt: name={{ item }} state=latest
   become: true
+  apt: >
+    name={{ item }}
+    state=latest
   with_items:
     - unzip
     - curl
@@ -17,7 +22,3 @@
     - python-dev
     - python-psycopg2
     - tree
-    - libncurses5-dev
-    - libncursesw5-dev
-    - upower
-    - xdg-utils
