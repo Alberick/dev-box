@@ -1,7 +1,9 @@
 ---
 - name: Install tmux necessary packages
-  apt: name={{ item }} state=latest
   become: true
+  apt: >
+   name={{ item }}
+   state=latest
   with_items:
     - libncurses5-dev
     - libncursesw5-dev
@@ -11,15 +13,15 @@
 - name: Download libevent and tmux from release tarball
   get_url: >
    url={{item}}
-   dest=~/
+   dest=/tmp
   with_items:
     - "{{libevent_url}}"
     - "{{tmux_url}}"
 
 - name: Extract libevent and tmux from tarball on ~/
   unarchive: >
-   src=~/{{item | basename}}
-   dest=~/
+   src=/tmp/{{item | basename}}
+   dest=/tmp
   with_items:
     - "{{libevent_url}}"
     - "{{tmux_url}}"
@@ -27,23 +29,13 @@
 - name: Configure and build libevent and tmux
   shell: "{{item[1]}}"
   args:
-    chdir: "~/{{item[0]}}"
+    chdir: "/tmp/{{item[0]}}"
     executable: "{{zsh}}"
   with_nested:
     - ["{{libevent_folder}}", "{{tmux_folder}}"]
     - ['./configure && make', 'sudo make install']
 
-- name: Remove libevent and tmux files
-  file: >
-    path=~/{{item}}
-    state=absent
-  with_items:
-    - "{{libevent_url | basename}}"
-    - "{{tmux_url | basename}}"
-    - "{{libevent_folder}}"
-    - "{{tmux_folder}}"
-
-- name: Copy settings
+- name: Symlink settings
   file: >
     src=~/provisioning/roles/tmux/files/tmux.conf
     dest=~/.tmux.conf
