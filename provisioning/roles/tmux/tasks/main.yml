@@ -1,17 +1,61 @@
 ---
-- name: Add tmux ppa
-  apt_repository: repo='ppa:pi-rho/dev'
-  sudo: true
-
-- name: Install tmux from package repository
-  apt: name={{ item }} state=latest update_cache=yes
-  sudo: true
+- name: Install tmux necessary packages
+  apt: name={{ item }} state=latest
+  become: true
   with_items:
-    - tmux
+    - libncurses5-dev
+    - libncursesw5-dev
     - upower
+    - xdg-utils
+
+- name: Download libevent and tmux from release tarball
+  get_url: >
+   url={{item}}
+   dest=~/
+  with_items:
+    - "{{libevent_url}}"
+    - "{{tmux_url}}"
+
+- name: Extract libevent and tmux from tarball on ~/
+  unarchive: >
+   src=~/{{item | basename}}
+   dest=~/
+  with_items:
+    - "{{libevent_url}}"
+    - "{{tmux_url}}"
+
+- name: Configure and build libevent and tmux
+  shell: "{{item[1]}}"
+  args:
+    chdir: "~/{{item[0]}}"
+    executable: "{{zsh}}"
+  with_nested:
+    - ["{{libevent_folder}}", "{{tmux_folder}}"]
+    - ['./configure && make', 'sudo make install']
+
+- name: Remove libevent and tmux files
+  file: >
+    path=~/{{item}}
+    state=absent
+  with_items:
+    - "{{libevent_url | basename}}"
+    - "{{tmux_url | basename}}"
+    - "{{libevent_folder}}"
+    - "{{tmux_folder}}"
 
 - name: Copy settings
-  copy: src=tmux.conf dest=~/.tmux.conf
+  file: >
+    src=~/provisioning/roles/tmux/files/tmux.conf
+    dest=~/.tmux.conf
+    state=link
 
 - name: Install tmux package manager
-  git: repo=https://github.com/tmux-plugins/tpm dest=~/.tmux/plugins/tpm
+  git: >
+   repo={{tpm}}
+   dest=~/.tmux/plugins/tpm
+
+- name: Reload TMUX environment so TPM is sourced
+  shell: tmux source ~/.tmux.conf
+  ignore_errors: True
+  args:
+    executable: "{{zsh}}"
