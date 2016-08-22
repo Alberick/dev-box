@@ -14,7 +14,7 @@ ZSH_THEME="bullet-train"
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+export UPDATE_ZSH_DAYS=5
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -45,7 +45,8 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git nvm tmux pip python virtualenv virtualenvwrapper docker-compose)
+plugins=(git nvm tmux pip python virtualenv virtualenvwrapper docker-compose bower gulp)
+plugins+=(zsh-navigation-tools)
 
 # User configuration
 
@@ -85,9 +86,6 @@ alias zshrc="vim ~/.zshrc"
 # BULLETTRAIN
 BULLETTRAIN_PROMPT_CHAR=→
 BULLETTRAIN_NVM_PREFIX=♦
-BULLETTRAIN_VIRTUALENV_PREFIX=☢
-BULLETTRAIN_GIT_AHEAD=↑
-BULLETTRAIN_GIT_BEHIND=↓
 
 BULLETTRAIN_RUBY_SHOW=false
 BULLETTRAIN_NVM_SHOW=true
@@ -108,3 +106,12 @@ export TERM="xterm-256color"
 
 # tmux fix for colors
 # alias tmux='tmux -2'
+
+# zsh widget biding for history, places and kill
+autoload znt-history-widget
+zle -N znt-history-widget
+bindkey "^R" znt-history-widget
+zle -N znt-cd-widget
+bindkey "^S" znt-cd-widget
+zle -N znt-kill-widget
+bindkey "^Y" znt-kill-widget
