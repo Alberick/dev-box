@@ -1,7 +1,8 @@
 ---
 - name: Install git from package repository
   become: true
-  apt: {{item}}
+  apt: >
+    name={{item}}
   with_items:
     - git-core
     - git-flow
