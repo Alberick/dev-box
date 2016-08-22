@@ -1,7 +1,10 @@
 ---
 - name: Install git from package repository
-  apt: name=git-core
   become: true
+  apt: {{item}}
+  with_items:
+    - git-core
+    - git-flow
 
 - name: Copy global git configuration
   file: >
