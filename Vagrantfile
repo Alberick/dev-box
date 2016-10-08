@@ -27,6 +27,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.network "forwarded_port", guest: 5555, host: 5555
     config.vm.network "forwarded_port", guest: 5672, host: 5672
     config.vm.network "forwarded_port", guest: 8111, host: 8111
+    config.vm.network "forwarded_port", guest: 8080, host: 8080
+    config.vm.network "forwarded_port", guest: 4200, host: 4200
     config.vm.network "forwarded_port", guest: 9000, host: 9000
     config.vm.network "forwarded_port", guest: 15672, host: 15672
     config.vm.network "forwarded_port", guest: 35729, host: 35729
@@ -35,20 +37,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     # SYNC FOLDERS
     # Tixif
-    config.vm.synced_folder "~/Documents/Tixif/django-tixif", "/home/vagrant/Tixif/django-tixif"
-    config.vm.synced_folder "~/documents/Tixif/scp-api", "/home/vagrant/Tixif/scp-api"
-    config.vm.synced_folder "~/documents/Tixif/scp-web", "/home/vagrant/Tixif/scp-web"
-    config.vm.synced_folder "~/documents/Tixif/scp-mobile", "/home/vagrant/Tixif/scp-mobile"
     # Tixif
 
     # Nexus
-    # javascript
-    config.vm.synced_folder "~/Documents/Nexus/javaScript/ionicJs/ionic_in_action", "/home/vagrant/Nexus/javaScript/ionicJs/ionic_in_action"
-    config.vm.synced_folder "~/Documents/Nexus/javaScript/ionicJs/Ionic_2ndTutorial", "/home/vagrant/Nexus/javaScript/ionicJs/Ionic_2ndTutorial"
-    config.vm.synced_folder "~/Documents/Nexus/javaScript/ionicJs/ionic_todo", "/home/vagrant/Nexus/javaScript/ionicJs/ionic_todo"
+    # 	ionic
 
-    # Python
-    config.vm.synced_folder "~/Documents/Nexus/python/django/part3_realpython/", "/home/vagrant/Nexus/python/django/part3_realpython/"
+    #	angular2
+
+
+    # 	Python
     # Nexus
     # SYNC FOLDERS
 
