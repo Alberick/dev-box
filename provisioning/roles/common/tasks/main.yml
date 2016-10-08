@@ -25,3 +25,4 @@
     - python-psycopg2
     - tree
     - whois
+    - make
