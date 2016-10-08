@@ -49,3 +49,7 @@ version: r24.4.1
 
 # android url
 android_url: https://dl.google.com/android/android-sdk_{{ version }}-linux.tgz
+
+# watchman git repo url
+watchman_repo: https://github.com/facebook/watchman.git
+watchman_version: 4.7.0
