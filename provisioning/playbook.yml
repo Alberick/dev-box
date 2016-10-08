@@ -3,7 +3,9 @@
   remote_user: vagrant
   roles:
     - common
+    - amazon
     - git
+    - watchman
     - zsh
     - tmux
     - vim
