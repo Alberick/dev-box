@@ -46,7 +46,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git nvm tmux pip python virtualenv virtualenvwrapper docker-compose bower gulp)
-plugins+=(zsh-navigation-tools npm ssh-agent)
+plugins+=(zsh-navigation-tools npm ssh-agent git-flow)
 
 # User configuration
 
@@ -64,6 +64,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -93,7 +94,7 @@ BULLETTRAIN_NVM_SHOW=true
 BULLETTRAIN_TIME_12HR=true
 BULLETTRAIN_STATUS_EXIT_SHOW=true
 BULLETTRAIN_EXEC_TIME_SHOW=true
-BULLETTRAIN_DIR_CONTEXT_SHOW=true
+BULLETTRAIN_DIR_EXTENDED=1
 # ENDBULLETTRAIN
 
 
@@ -102,7 +103,7 @@ export PATH="$HOME/android-sdk-macos/tools:$HOME/android-sdk-macos/platform-tool
 # ENDANDROID
 
 # term color
-export TERM="xterm-256color"
+# export TERM="xterm-256color"
 
 # tmux fix for colors
 # alias tmux='tmux -2'
