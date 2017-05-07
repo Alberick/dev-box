@@ -17,7 +17,7 @@
   become: true
   user: >
     shell=/bin/zsh
-    name={{ ansible_ssh_user }}
+    name=vagrant
 
 - name: Download theme
   git: >

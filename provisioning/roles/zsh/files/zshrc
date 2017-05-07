@@ -53,6 +53,18 @@ plugins+=(zsh-navigation-tools npm ssh-agent git-flow)
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
+# BULLETTRAIN
+BULLETTRAIN_PROMPT_CHAR=→
+BULLETTRAIN_NVM_PREFIX=♦
+BULLETTRAIN_PROMPT_ORDER=(time status dir git virtualenv aws)
+BULLETTRAIN_TIME_12HR=true
+BULLETTRAIN_STATUS_EXIT_SHOW=true
+BULLETTRAIN_EXEC_TIME_SHOW=true
+BULLETTRAIN_DIR_EXTENDED=1
+BULLETTRAIN_GIT_AHEAD=↑
+BULLETTRAIN_GIT_BEHIND=↓
+# ENDBULLETTRAIN
+
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
@@ -83,24 +95,6 @@ export EDITOR='vim'
 #
 alias vimrc="vim ~/.vimrc"
 alias zshrc="vim ~/.zshrc"
-
-# BULLETTRAIN
-BULLETTRAIN_PROMPT_CHAR=→
-BULLETTRAIN_NVM_PREFIX=♦
-
-BULLETTRAIN_RUBY_SHOW=false
-BULLETTRAIN_NVM_SHOW=true
-
-BULLETTRAIN_TIME_12HR=true
-BULLETTRAIN_STATUS_EXIT_SHOW=true
-BULLETTRAIN_EXEC_TIME_SHOW=true
-BULLETTRAIN_DIR_EXTENDED=1
-# ENDBULLETTRAIN
-
-
-# ANDROID
-export PATH="$HOME/android-sdk-macos/tools:$HOME/android-sdk-macos/platform-tools:$PATH"
-# ENDANDROID
 
 # term color
 # export TERM="xterm-256color"
