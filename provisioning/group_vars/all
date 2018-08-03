@@ -6,14 +6,11 @@ libevent_url: https://github.com/libevent/libevent/releases/download/release-2.0
 libevent_folder: libevent-2.0.22-stable
 
 # tmux release tarball
-tmux_url: https://github.com/tmux/tmux/releases/download/2.4/tmux-2.4.tar.gz
-tmux_folder: tmux-2.4
+tmux_url: https://github.com/tmux/tmux/releases/download/2.7/tmux-2.7.tar.gz
+tmux_folder: tmux-2.7
 
 # tmux package manager
 tpm: https://github.com/tmux-plugins/tpm
-
-# ruby rvm gpg key
-rvm: hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 
 # mux completion file url
 mux_completion: https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh
@@ -31,17 +28,17 @@ zsh_repo: https://github.com/robbyrussell/oh-my-zsh.git
 bullet_repo: https://github.com/caiogondim/bullet-train-oh-my-zsh-theme.git
 
 # nvm downlaod url
-nvm_url: https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh
+nvm_url: https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh
 
 # docker gpg key
-docker_keyserver: hkp://p80.pool.sks-keyservers.net:80
-docker_key: 58118E89F3A912897C070ADBF76221572C52609D
+docker_keyserver: https://download.docker.com/linux/ubuntu/gpg
+docker_key: 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
 
 # docker source for os
-docker_source: deb https://apt.dockerproject.org/repo ubuntu-trusty main
+docker_source: "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
 
 # docker-compose
-docker_compose_url: https://github.com/docker/compose/releases/download/1.12.0/docker-compose-{{ kernel.stdout }}-{{ machine.stdout }}
+docker_compose_url: https://github.com/docker/compose/releases/download/1.22.0/docker-compose-Linux-x86_64
 docker_compose_path: /usr/local/bin/docker-compose
 
 # android version
