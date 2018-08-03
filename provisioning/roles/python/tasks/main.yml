@@ -1,66 +1,33 @@
 ---
 - name: Download latest pip
-  get_url: >
-    url=https://bootstrap.pypa.io/{{ pip_file }}
-    dest=/tmp
+  get_url:
+    url: https://bootstrap.pypa.io/{{ pip_file }}
+    dest: /tmp
 
 - name: Install pip
   become: true
   shell: python {{ pip_file }}
   args:
     chdir: /tmp
-    executable: "{{zsh}}"
+    executable: '{{zsh}}'
 
 - name: Install global pip packages
   become: true
   shell: pip install {{ item }}
   args:
-    executable: "{{zsh}}"
-  with_items:
+    executable: '{{zsh}}'
+  loop:
     - flake8
     - virtualenv
     - virtualenvwrapper
     - awscli
 
-- name: Add workon_home variable for virtualenvwrapper
-  blockinfile:
-    dest: ~/.zshrc
-    create: yes
-    marker: ''
-    insertafter: EOF
-    block: |
-      # virtualenv workon_home variable
-      export WORKON_HOME=$HOME/.virtualenvs
-      # virtualenv workon_home variable
-
-- name: Add project_home variable for virtualenvwrapper
-  blockinfile:
-    dest: ~/.zshrc
-    create: yes
-    marker: ''
-    insertafter: EOF
-    block: |
-      # Project home for virtualenvwrapper
-      export PROJECT_HOME=$HOME/repos
-      # Project home for virtualenvwrapper
-
-- name: Source virtualenvwrapper
-  blockinfile:
-    dest: ~/.zshrc
-    create: yes
-    marker: ''
-    insertafter: EOF
-    block: |
-      # virtualenv source
-      source /usr/local/bin/virtualenvwrapper.sh
-      # virtualenv source
-
 - name: Install postgres system packages
   become: true
-  apt: >
-    name={{ item }}
-    state=latest
-  with_items:
+  apt:
+    name: '{{ item }}'
+    state: latest
+  loop:
       - python-psycopg2
       - libpq-dev
       - python-dev

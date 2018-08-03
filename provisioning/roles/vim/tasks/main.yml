@@ -1,8 +1,10 @@
 ---
 - name: Install vim from package repository
-  apt: name={{ item }} state=latest
+  apt:
+    name: '{{ item }}'
+    state: latest
   become: true
-  with_items:
+  loop:
     - vim
     - exuberant-ctags
     - ack-grep
@@ -10,30 +12,30 @@
 # Download settings from own repository
 - name: Download vim folder
   git:
-    repo={{vim_repo}}
-    dest=~/.vim
-    force=yes
+    repo: '{{vim_repo}}'
+    dest: ~/.vim
+    force: yes
 
 - name: Create symlink to vimrc
-  file: >
-    src=~/.vim/.vimrc
-    dest=~/.vimrc
-    state=link
+  file:
+    src: ~/.vim/.vimrc
+    dest: ~/.vimrc
+    state: link
 
 - name: Create symlink to pathogen
   file:
-    src=~/.vim/autoload/vim-pathogen/autoload/pathogen.vim
-    dest=~/.vim/autoload/pathogen.vim
-    state=link
+    src: ~/.vim/autoload/vim-pathogen/autoload/pathogen.vim
+    dest: ~/.vim/autoload/pathogen.vim
+    state: link
 
 - name: Create symlink to hybrid theme
   file:
-    src=~/.vim/colors/hybrid/colors/hybrid.vim
-    dest=~/.vim/colors/hybrid.vim
-    state=link
+    src: ~/.vim/colors/hybrid/colors/hybrid.vim
+    dest: ~/.vim/colors/hybrid.vim
+    state: link
 
 - name: Copy ackrc to home
-  file: >
-   src=~/provisioning/roles/vim/files/ackrc
-   dest=~/.ackrc
-   state=link
+  file:
+   src: ~/provisioning/roles/vim/files/ackrc
+   dest: ~/.ackrc
+   state: link

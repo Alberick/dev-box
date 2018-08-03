@@ -1,17 +1,17 @@
 ---
 - name: update package repository and upgrade packages
   become: true
-  apt: >
-    update-cache=yes
-    cache_valid_time=1800
-    upgrade=dist
+  apt:
+    update-cache: yes
+    cache_valid_time: 1800
+    upgrade: dist
 
 - name: Install common packages
   become: true
-  apt: >
-    name={{ item }}
-    state=latest
-  with_items:
+  apt:
+    name: '{{ item }}'
+    state: latest
+  loop:
     - unzip
     - curl
     - wget
