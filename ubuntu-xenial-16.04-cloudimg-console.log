@@ -1,0 +1,609 @@
+[    0.000000 Initializing cgroup subsys cpuset
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 3.13.0-117-generic uildd@lgw01-18) (gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.3) ) #164-Ubuntu SMP Fri Apr 7 11:0:26 UTC 2017 (Ubuntu 3.13.0-117.164-generic 3.13.11-ckt39)
+[    0.000000] Command line: BOOT_IMAGE=/boot/vmlinuz-3.13.0-117-generic root=UUID=ce8fdc9c-fa56-49db-b69d-8c11634cbb7a ro console=tty1 console=ttyS0
+[    0.000000] KERNEL supported cpus:
+[    0.000000]   Intel GenuineIntel
+[    0.000000]   AMD AuthenticAMD
+[    0.000000]   Centaur CentaurHauls
+[    0.000000] e820: BIOS-provided physical RAM map:
+[    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usabl
+[    0.000000] BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000000100000-0x00000000dffeffff] usable
+[    0.000000] BIOSe820: [mem 0x00000000dfff0000-0x00000000dfffffff] ACPI data
+[    0.000000] BIOS-e820: [mem 0x00000000fec00000-0x00000000fec00fff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fee00000-0x00000000fee00fff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x000001000000-0000011fffff uble
+[  00000] NX (Execute isleprteti: tie
+[   0.000] SMBIOS 2.5 reent
+[    00000] No AGP bridge found
+[    0.000000] e820: last_pfn = 0x120000 max_arch_pfn = 0x400000000
+[    0.000000] x86 PAT enabled: cpu 0, old 0x7040600070406, new 0x7010600070106
+[    0.000000] CPU MTRRs all blank - virtualized system.
+   0.000000 e20lat_pf= 0xdfff0 max_arch_pfn = 0x400000000
+[   000000 found SP P-abe a[mm x0009fff0-0x0009ffff] mapped at [ffff88000009fff0]
+[    0.000000] Scanning 1 areas for low memory corruption
+[    0.000000] init_memory_mapping: [mem 0x00000000-0x000fffff]
+[   0.00000] init_memory_mapping: [mem 0x11fe00000-0x11fffff]
+[    0.000000] init_memory_mapping: [mem 0x11c000000-0x11fdfffff]
+[    0.000000] init_memory_mapping: [mem 0x100000000-0x11bffffff]
+[    0.000000] init_memory_mapping: [mem 0x00100000-0xdffeffff]
+[    0.000000] RAMDISK: [mem 0x34e42000-0x36718fff]
+[    0.000000] ACPI: RSDP 00000000000e0000 000024 (v02 VBOX  )
+[    0.000000] ACPI: XSDT 00000000dfff0030 00003C (v01 VBOX   VBOXXSDT 00000001 ASL  00000061)
+[    0.000000] ACPI: FACP 00000000dfff00f0 0000F4 (v04 VBOX   VBOXFACP 00000001 ASL  00000061)
+[    0.000000] ACPI: DSDT 00000000dfff0470 0021FF (v02 VBOX   VBOXBIOS 00000002 INTL 20100528)
+[    0.000000] ACPI: FACS 00000000dfff0200 000040
+[    0.000000] ACPI: APIC 00000000dfff0240 00005C (v02 VBOX   VBOXAPIC 00000001 ASL  00000061)
+[    0.000000] ACPI: SSDT 00000000dfff02a0 0001CC (v01 VBOX   VBOXCPUT 00000002 INTL 20100528)
+[    0.000000] No NUMA configuration found
+[    0.000000] Faking a node at [mem 0x0000000000000000-0x000000011fffffff]
+[    0.000000] Initmem setup node 0 [mem 0x00000000-0x11fffffff]
+[    0.000000]   NODE_DATA [mem 0x11fff7000-0x11fffbfff]
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x00001000-0x00fffff
+[   0.000]   DMA32    [mem 0x01000000-0xffffffff]
+[    0.000000]   Normal   [mem 0x100000000-0x11fffffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x00001000-0x0009efff]
+[    0.000000]   node   0: [mem 0x00100000-0xdffeffff]
+[    0.000000]   node   0: [mem 0x100000000-0x11fffffff]
+[    0.000000] ACPI: PM-Timer IO Port: 0x4008
+[    0.000000] ACPI: LAPIC (acpi_id[0x00] lapic_id[0x00] enabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x01] lapic_id[0x01] enabled)
+[    0.000000] ACPI: IOAPIC (id[0x02] address[0xfec00000] gsi_base[0])
+[    0.000000] IOAPIC[0]: apic_id 2, version 32, address 0xfec00000, GSI 0-23
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 low level)
+[    0.000000] Using ACPI (AD) for SMP configuration information
+[    0.000000] smpboot: Allowing 2 CPUs, 0 hotplug CPUs
+[    0.000000] PM: Registered nosave memory: [mem 0x0009f000-0x0009ffff]
+[    0.000000] PM: Registre nosa mmory: [mem 0x000a0000-0x000effff]
+[    0.000000] PM: Registered nosave memory: [mem 0x000f0000-0x000fffff]
+[    0.000000] PM: Registered nosave memory: [mem 0xdfff0000-0xdfffffff]
+[    0.000000] PM: Registered nosave memory: [mem 0xe0000000-0xfebfffff]
+[    0.000000] PM: Registered nosave memory: [em0xfec00000-0xfec00fff]
+[    0.000000] PM: Registered nosave memory: [mem 0xfec001000-0xfedfffff]
+[    0.000000] PM: Registered nosave memory: [mem 0xfee00000-0xfee00fff]
+[    0.000000] PM: Registered nosave memory: [mem 0xfee01000-0xfffbffff]
+[    0.000000] PM: Registered nosave memory: [mem 0xfffc0000-0xffffffff]
+[    0.000000] e820: [mem 0xe0000000-0xfebfffff] available for PCI devices
+[    0.000000] Booting paravirtualized kernel on bare hardware
+[    0.000000] setup_percpu: NR_CPUS:256 nr_cpumask_bits:256 nr_cpu_ids:2 nr_node_ids:1
+[    0.000000] PERCPU: Embedded 27 pages/cpu @ffff88011fc00000 s81536 r8192 d20864 u1048576
+[    0.000000] Built 1 zonelists in Node order, mobility grouping on.  Total pages: 1032057
+[    0.000000] Policy zone: Normal
+[    0.000000] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-3.130-11-gerc root=UUID=ce8fdcc-569db-b69-8114cbb7a o console=tty1 console=ttyS0
+[    0.000000] PID hash table entries: 4096 (order: 3, 32768 bytes)
+[    0.000000] xsave: enabled xstate_bv 0x7, cntxt size 0x340
+[    0.000000] Checking aperture...
+[    0.000000] No AGP bridge found
+[    0.000000] Memory: 4019948K/4193848K available (7432K kernel code, 1147K rwdata, 3424K rodata, 1340K init, 1448K bss, 173900K reserved)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+[    0.000000] Hierarchical RCU implementation.
+[    0.000000] 	RCU dyntick-idle grace-period acceleration is enabled.
+[    0.000000] 	RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=2.
+[    0.000000] 	Offload RCU callbacks from all CPUs
+[    0.000000] 	Offload RCU callbacks from CPUs: 0-1.
+[    0.000000] NR_IRQS:16640 nr_irqs:512 16
+[    0.000000] Console: colour VGA+ 80x25
+[    0.000000] console [tty1] enable
+[   0.000000] console [ttyS0] enabled
+
+[  000000] allocated 16777216 bytes of page_cgroup
+[    0.000000] please try 'cgroup_disable=memoryoption if you don't want memory cgroups
+[    0.000000] tsc: Fast TSC calibration using PIT
+[    0.004000] tsc: Detected 2394.453 MHz processor
+[    0.000004] Calibrating delay loop (skipped), value calculated using timer frequency.. 4788.90 BogoMIPS (lpj=9577812)
+[    0.001595] pid_max: default: 32768 minimum: 301
+[    0.002343] Security Framework initialized
+[    0.003040] AppArmor: AppArmor initialized
+[    0.003711] Yama: becoming mindful.
+[    0.007493] Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes)
+[    0.016182] Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes)
+[    0.029331] Mount-cache hash table entries: 8192 (order: 4, 65536 bytes)
+[    0.030288] Mountpoint-cache hash table entries: 8192 (order: 4, 65536 bytes)
+[    0.031435] Initializing cgroup subsys memory
+[    0.032124] Initializing cgroup subsys devices
+[    0.032819] Initializing cgroup subsys freezer
+[    0.033514] Initializing cgroup subsys blkio
+[    0.034186] Initializing cgroup subsys perf_event
+[    0.034909] Initializing cgroup subsys hugetlb
+[    0.035427] CPU: Physical Processor ID: 0
+[    0.036099] CPU: Processor Core ID: 0
+[    0.036646] mce: CPU supports 0 MCE banks
+[    0.038163] Last level iTLB entries: 4KB 0, 2MB 0, 4MB 0
+[    0.038163] Last level dTLB entries: 4KB 64, 2MB 0, 4MB 0
+[    0.038163] tlb_flushall_shift: 6
+[    0.047334] Freeing SMP alternatives memory: 32K (ffffffff81e6f000 - ffffffff81e77000)
+[    0.079404] ACPI: Core revision 20131115
+[    0.080690] ACPI: All ACPI Tables successfully acquired
+[    0.081602] ftrace: allocating 28675 entries in 113 pages
+[    0.110696] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+[    0.176277] smpboot: CPU0: Intel(R) Core(TM) i7-4700HQ CPU @ 2.40GHz (fam: 06, model: 3c, stepping: 03)
+[    0.316094] APIC calibration not consistent with PM-Timer: 98ms instead of 100ms
+[    0.318087] APIC delta adjusted to PM-Timer: 6242966 (6154804)
+[    0.373125] Performance Events: unsupported p6 CPU model 60 no PMU driver, software events only.
+[    0.375802] NMI watchdog: disabled (cpu0): hardware events not enabled
+[    0.398867] x86: Booting SMP configuration:
+[    0.410184] .... node  #0, CPUs:      #1[    0.422697] mce: CPU supports 0 MCE banks
+
+[    0.432988] x86: Booted up 1 node, 2 CPUs
+[    0.433741] smpboot: Total of 2 processors activated (9577.81 BogoMIPS)
+[    0.438446] devtmpfs: initialized
+[    0.446931] EVM: security.selinux
+[    0.447512] EVM: security.SMACK64
+[    0.448092] EVM: security.ima
+[    0.448606] EVM: security.capability
+[    0.459097] pinctrl core: initialized pinctrl subsystem
+[    0.473643] regulator-dummy: no parameters
+[    0.474344] RTC time:  6:34:13, date: 08/03/18
+[    0.475077] NET: Registered protocol family 16
+[    0.475843] cpuidle: using governor ladder
+[    0.483498] cpuidle: using governor menu
+[    0.484186] ACPI: bus type PCI registered
+[    0.484846] acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+[    0.485915] PCI: Using configuration type 1 for base access
+[    0.487472] bio: create slab <bio-0> at 0
+[    0.488400] ACPI: Added _OSI(Module Device)
+[    0.488812] ACPI: Added _OSI(Processor Device)
+[    0.489786] ACPI: Added _OSI(3.0 _SCP Extensions)
+[    0.490506] ACPI: Added _OSI(Processor Aggregator Device)
+[    0.491837] ACPI: Executed 1 blocks of module-level executable AML code
+[    0.494598] ACPI: Interpreter enabled
+[    0.501549] ACPI Exception: AE_NOT_FOUND, While evaluating Sleep State [\_S1_] (20131115/hwxface-580)
+[    0.503027] ACPI Exception: AE_NOT_FOUND, While evaluating Sleep State [\_S2_] (20131115/hwxface-580)
+[    0.504507] ACPI Exception: AE_NOT_FOUND, While evaluating Sleep State [\_S3_] (20131115/hwxface-580)
+[    0.518060] ACPI Exception: AE_NOT_FOUND, While evaluating Sleep State [\_S4_] (20131115/hwxface-580)
+[    0.519538] ACPI: (supports S0 S5)
+[    0.520117] ACPI: Using IOAPIC for interrupt routing
+[    0.521161] PCI: Ignoring host bridge windows from ACPI; if necessary, use "pci=use_crs" and report a bug
+[    0.522584] ACPI: No dock devices found.
+[    0.536148] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[    0.549765] acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments MSI]
+[    0.550750] acpi PNP0A03:00: _OSC: not requesting OS control; OS requires [ExtendedConfig ASPM ClockPM MSI]
+[    0.552312] acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended PCI configuration space under this bridge.
+[    0.589465] PCI host bridge to bus 0000:00
+[    0.609271] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    0.610087] pci_bus 0000:00: root bus resource [io  0x0000-0xffff]
+[    0.676835] pci_bus 0000:00: root bus resource [mem 0x00000000-0x7fffffffff]
+[    0.727059] pci 0000:00:07.0: quirk: [io  0x4000-0x403f] claimed by PIIX4 ACPI
+[    0.746305] pci 0000:00:07.0: quirk: [io  0x4100-0x410f] claimed by PIIX4 SMB
+[    0.821488] ACPI: PCI Interrupt Link [LNKA] (IRQs 5 9 10 *11)
+[    0.873431] ACPI: PCI Interrupt Link [LNKB] (IRQs 5 9 *10 11)
+[    0.875263] ACPI: PCI Interrupt Link [LNKC] (IRQs 5 *9 10 11)
+[    0.876476] ACPI: PCI Interrupt Link [LNKD] (IRQs 5 9 10 *11)
+[    0.877926] ACPI: Enabled 2 GPEs in block 00 to 07
+[    0.879141] vgaarb: setting as boot device: PCI:0000:00:02.0
+[    0.879973] vgaarb: device added: PCI:0000:00:02.0,decodes=io+mem,owns=io+mem,locks=none
+[    0.880831] vgaarb: loaded
+[    0.896622] vgaarb: bridge control possible 0000:00:02.0
+[    0.908735] SCSI subsystem initialized
+[    0.919143] ACPI: bus type USB registered
+[    0.927829] usbcore: registered new interface driver usbfs
+[    0.929841] usbcore: registered new interface driver hub
+[    0.930770] usbcore: registered new device driver usb
+[    0.939198] PCI: Using ACPI for IRQ routing
+[    0.940451] NetLabel: Initializing
+[    0.941012] NetLabel:  domain hash size = 128
+[    0.941995] NetLabel:  protocols = UNLABELED CIPSOv4
+[    0.943072] NetLabel:  unlabeled traffic allowed by default
+[    0.944681] Switched to clocksource refined-jiffies
+[    0.960398] AppArmor: AppArmor Filesystem Enabled
+[    0.961551] pnp: PnP ACPI init
+[    0.962379] ACPI: bus type PNP registered
+[    0.964301] pnp: PnP ACPI: found 4 devices
+[    0.964804] ACPI: bus type PNP unregistered
+[    0.976994] Switched to clocksource acpi_pm
+[    0.978048] NET: Registered protocol family 2
+[    0.979353] TCP established hash table entries: 32768 (order: 6, 262144 bytes)
+[    0.980859] TCP bind hash table entries: 32768 (order: 7, 524288 bytes)
+[    0.986948] TCP: Hash tables configured (established 32768 bind 32768)
+[    0.988359] TCP: reno registered
+[    0.989114] UDP hash table entries: 2048 (order: 4, 65536 bytes)
+[    0.990362] UDP-Lite hash table entries: 2048 (order: 4, 65536 bytes)
+[    0.991748] NET: Registered protocol family 1
+[    0.992696] pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+[    0.93996] pci 0000:00:01.0: Activating ISA DMA hang workarounds
+[    1.031260] Trying to unpack rootfs image as initramfs...
+
+[  143883Frininrdmemory: 25436K (ffff880034e42000 - ffff880036719000)
+[    1.953093] PCI-DMA: Using software bounce buffering for IO (SWIOTLB)
+[    1.953777] software IO TLB [mem 0xdbff0000-0xdfff0000] (64MB) mapped at [ffff8800dbff0000-ffff8800dffeffff]
+
+[    1.955603] platform rtc_cmos: registered platform RTC device (no PNP device found)
+[    1.956928] microcode: CPU0 sig=0x306c3, pf=0x40, revision=0x0
+[    1.958569] microcode: CPU1 sig=0x306c3, pf=0x40, revision=0x0
+[    1.959595] microcode: Microcode Update Driver: v2.00 <tigran@aivazian.fsnet.co.uk>, Peter Oruba
+[    1.960929] Scanning for low memory corruption every 60 seconds
+[    1.962274] Initialise system trusted keyring
+[    1.963051] audit: initializing netlink socket (disabled)
+[    1.970779] type=2000 audit(1533278052.387:1): initialized
+[    1.995302] HugeTLB registered 2 MB page size, pre-allocated 0 pages
+[    2.001069] zbud: loaded
+[    2.001816] VFS: Disk quotas dquot_6.5.2
+[    2.002526] Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    2.005992] fuse init (API version 7.22)
+[    2.007765] msgmni has been set to 7901
+[    2.008434] Key type big_key registered
+[    2.010529] Key type asymmetric registered
+[    2.011165] Asymmetric key parser 'x509' registered
+[    2.017219] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
+[    2.018531] io scheduler noop registered
+[    2.019173] io scheduler deadline registered (default)
+[    2.020006] io scheduler cfq registered
+[    2.032513] pci_hotplug: PCI Hot Plug PCI Core version: 0.5
+[    2.033447] pciehp: PCI Express Hot Plug Controller Driver version: 0.4
+[    2.034491] ipmi message handler version 39.2
+[    2.035272] ACPI: Deprecated procfs I/F for AC is loaded, please retry with CONFIG_ACPI_PROCFS_POWER cleared
+[    2.036804] ACPI: AC Adapter [AC] (on-line)
+[    2.037548] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+[    2.046716] ACPI: Power Button [PWRF]
+[    2.052821] input: Sleep Button as /devices/LNXSYSTM:00/LNXSLPBN:00/input/input1
+[    2.053855] ACPI: Sleep Button [SLPF]
+[    2.054626] GHES: HEST is not enabled!
+[    2.055209] ACPI: Deprecated procfs I/F for battery is loaded, please retry with CONFIG_ACPI_PROCFS_POWER cleared
+[    2.055213] ACPI: Battery Slot [BAT0] (battery present)
+[    2.084452] Serial: 8250/16550 driver, 32 ports, IRQ sharing enabled
+[    2.107501] 00:03: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+[    2.131957] Linux agpgart interface v0.103
+[    2.138638] brd: module loaded
+[    2.139589] loop: module loaded
+[    2.140383] libphy: Fixed MDIO Bus: probed
+[    2.141099] tun: Universal TUN/TAP device driver, 1.6
+[    2.141861] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    2.142873] PPP generic driver version 2.4.2
+[    2.143588] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    2.144526] ehci-pci: EHCI PCI platform driver
+[    2.146407] ehci-platform: EHCI generic platform driver
+[    2.147294] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    2.148175] ohci-pci: OHCI PCI platform driver
+[    2.148871] ohci-platform: OHCI generic platform driver
+[    2.149650] uhci_hcd: USB Universal Host Controller Interface driver
+[    2.150884] i8042: PNP: PS/2 Controller [PNP0303:PS2K,PNP0f03:PS2M] at 0x60,0x64 irq 1,12
+[    2.152542] serio: i8042 KBD port at 0x60,0x64 irq 1
+[    2.153298] serio: i8042 AUX port at 0x60,0x64 irq 12
+[    2.155297] mousedev: PS/2 mouse device common for all mice
+[    2.156374] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input2
+[    2.158124] rtc_cmos rtc_cmos: rtc core: registered rtc_cmos as rtc0
+[    2.181197] rtc_cmos rtc_cmos: alarms up to one day, 114 bytes nvram
+[    2.182021] device-mapper: uevent: version 1.0.3
+[    2.182824] device-mapper: ioctl: 4.27.0-ioctl (2013-10-30) initialised: dm-devel@redhat.com
+[    2.184149] ledtrig-cpu: registered to indicate activity on CPUs
+[    2.185138] TCP: cubic registered
+[    2.185773] NET: Registered protocol family 10
+[    2.186655] NET: Registered protocol family 17
+[    2.187371] Key type dns_resolver registered
+[    2.188180] Loading compiled-in X.509 certificates
+[    2.204707] Loaded X.509 cert 'Magrathea: Glacier signing key: 3e56fd1ce20451085471b1d8cf7c657307b51abd'
+[    2.206156] registered taskstats version 1
+[    2.208759] Key type trusted registered
+[    2.219946] Key type encrypted registered
+[    2.237461] AppArmor: AppArmor sha1 policy hashing enabled
+[    2.245685] IMA: No TPM chip found, activating TPM-bypass!
+[    2.252139] regulator-dummy: disabling
+[    2.252927]   Magic number: 14:898:568
+[    2.253647] rtc_cmos rtc_cmos: setting system clock to 2018-08-03 06:34:15 UTC (1533278055)
+[    2.255088] BIOS EDD facility v0.16 2004-Jun-25, 0 devices found
+[    2.255966] EDD information not available.
+[    2.257444] Freeing unused kernel memory: 1340K (ffffffff81d20000 - ffffffff81e6f000)
+[    2.258960] Write protecting the kernel read-only data: 12288k
+[    2.260255] Freeing unused kernel memory: 748K (ffff880001745000 - ffff880001800000)
+[    2.262653] Freeing unused kernel memory: 672K (ffff880001b58000 - ffff880001c00000)
+Loading, please wait...
+[    2.280903] systemd-udevd[102]: starting version 204
+[    2.320841] e1000: Intel(R) PRO/1000 Network Driver - version 7.3.21-k8-NAPI
+[    2.321869] e1000: Copyright (c) 1999-2006 Intel Corporation.
+[    2.324622] ahci 0000:00:0d.0: SSS flag set, parallel bus scan disabled
+[    2.326957] ahci 0000:00:0d.0: AHCI 0001.0100 32 slots 1 ports 3 Gbps 0x1 impl SATA mode
+[    2.328261] ahci 0000:00:0d.0: flags: 64bit ncq stag only ccc 
+[    2.338778] scsi0 : ahci
+[    2.339515] ata1: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840100 irq 21
+[    2.345501] ACPI: Video Device [GFX0] (multi-head: yes  rom: no  post: no)
+[    2.358289] input: Video Bus as /devices/LNXSYSTM:00/device:00/PNP0A03:00/LNXVIDEO:00/input/input5
+[    2.538661] psmouse serio1: alps: Unknown ALPS touchpad: E7=10 00 64, EC=10 00 64
+[    2.567184] input: ImExPS/2 Generic Explorer Mouse as /devices/platform/i8042/serio1/input/input4
+[    2.676028] ata1: SATA link up 3.0 Gbps (SStatus 123 SControl 300)
+[    2.698444] e1000 0000:00:03.0 eth0: (PCI:33MHz:32-bit) 08:00:27:54:e0:3b
+[    2.698451] e1000 0000:00:03.0 eth0: Intel(R) PRO/1000 Network Connection
+[    2.717374] ata1.00: ATA-6: VBOX HARDDISK, 1.0, max UDMA/133
+[    2.719433] ata1.00: 83886080 sectors, multi 128: LBA48 NCQ (depth 31/32)
+[    2.720619] ata1.00: configured for UDMA/133
+[    2.722560] scsi 0:0:0:0: Direct-Access     ATA      VBOX HARDDISK    1.0  PQ: 0 ANSI: 5
+[    2.736284] sd 0:0:0:0: [sda] 83886080 512-byte logical blocks: (42.9 GB/40.0 GiB)
+[    2.739940] sd 0:0:0:0: [sda] Write Protect is off
+[    2.740795] sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[    2.754085] sd 0:0:0:0: Attached scsi generic sg0 type 0
+[    2.755649]  sda: sda1
+[    2.756428] sd 0:0:0:0: [sda] Attached SCSI disk
+[    3.000475] tsc: Refined TSC clocksource calibration: 2394.465 MHz
+[    3.038298] e1000 0000:00:08.0 eth1: (PCI:33MHz:32-bit) 08:00:27:44:c7:e9
+[    3.090210] e1000 0000:00:08.0 eth1: Intel(R) PRO/1000 Network Connection
+[    4.000521] Switched to clocksource tsc
+Begin: Loading essential drivers ... done.
+Begin: Running /scripts/init-premount ... done.
+Begin: Mounting root file system ... Begin: Running /scripts/local-top ... done.
+Begin: Running /scripts/local-premount ... done.
+[    4.379006] EXT4-fs (sda1): mounted filesystem with ordered data mode. Opts: (null)
+Begin: Running /scripts/local-bottom ... done.
+done.
+Begin: Running /scripts/init-bottom ... done.
+[    6.121334] random: init urandom read with 49 bits of entropy available
+ * Starting Init[    7.170823] EXT4-fs (sda1): re-mounted. Opts: (null)
+ialize or finalize resolvconf[74G[ OK ]
+ * Stopping Track if upstart is running in a container[74G[ OK ]
+ * Starting Signal sysvinit that the rootfs is mounted[74G[ OK ]
+ * Starting mount available cgroup filesystems[74G[ OK ]
+ * Starting Clean /tmp directory[74G[ OK ]
+ * Stopping Clean /tmp directory[74G[ OK ]
+Cloud-init v. 0.7.5 running 'init-local' at Fri, 03 Aug 2018 06:34:20 +0000. Up 6.93 seconds.
+cloud-init-nonet[7.07]: waiting 10 seconds for network device
+ * Starting set console keymap[74G[ OK ]
+ * Starting Signal sysvinit that virtual filesystems are mounted[74G[ OK ]
+ * Starting Signal sysvinit that virtual filesystems are mounted[74G[ OK ]
+ * Starting Bridge udev events into upstart[74G[ OK ]
+ * Starting device node and kernel event manager[74G[ OK ]
+ * Starting Signal sysvinit that remote filesystems are mounted[74G[ OK ]
+ * Stopping set console keymap[74G[ OK ]
+ * Starting load modules from /etc/modules[74G[ OK ]
+ * Starting log initial device creation[74G[ OK ]
+ * Stopping load modules from /etc/modules[74G[ OK ]
+ * Starting Uncomplicated firewall[74G[ OK ]
+ * Starting configure network device security[74G[ OK ]
+ * Starting configure network device security[74G[ OK ]
+ * Starting configure network device security[74G[ OK ]
+ * Starting Mount network filesystems[74G[ OK ][    7.963396] BUG: unable to handle kernel NULL pointer dereference at 0000000000000030
+[    7.963412] IP: [<ffffffffa0141cde>] drm_dev_register+0x2e/0x1e0 [drm]
+[    7.963416] PGD 35986067 PUD 35987067 PMD 0 
+[    7.963420] Oops: 0000 [#1] SMP 
+[    7.963431] Modules linked in: vboxvideo(OX+) ttm drm_kms_helper drm syscopyarea serio_raw sysfillrect sysimgblt i2c_piix4 vboxguest(OX) mac_hid crct10dif_pclmul crc32_pclmul ghash_clmulni_intel aesni_intel aes_x86_64 lrw gf128mul glue_helper ablk_helper cryptd video psmouse ahci libahci e1000
+[    7.963434] CPU: 1 PID: 506 Comm: systemd-udevd Tainted: G           OX 3.13.0-117-generic #164-Ubuntu
+[    7.963436] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[    7.963438] task: ffff8800361b4800 ti: ffff880035988000 task.ti: ffff880035988000
+[    7.963446] RIP: 0010:[<ffffffffa0141cde>]  [<ffffffffa0141cde>] drm_dev_register+0x2e/0x1e0 [drm]
+[    7.963448] RSP: 0018:ffff880035989b38  EFLAGS: 00010246
+[    7.963450] RAX: ffffffffa0053100 RBX: ffff880035a52000 RCX: 0000000000000003
+[    7.963452] RDX: 0000000000000000 RSI: 0000000000000000 RDI: ffffffffa016d000
+[    7.963454] RBP: ffff880035989b50 R08: 0000000000000046 R09: ffff880035989ad4
+[    7.963455] R10: 0000000000000010 R11: ffffffff8140046d R12: ffff880119464000
+[    7.963457] R13: 0000000000000000 R14: ffffffffa0053100 R15: 0000000000000000
+[    7.963460] FS:  00007fa9b66f0880(0000) GS:ffff88011fd00000(0000) knlGS:0000000000000000
+[    7.963461] CS:  0010 DS: 0000 ES: 0000 CR0: 000000008005003b
+[    7.963463] CR2: 0000000000000030 CR3: 0000000035985000 CR4: 00000000000406e0
+[    7.963467] Stack:
+[    7.963471]  ffff880035a52000 ffff880119464000 ffff880119464098 ffff880035989ba0
+[    7.963474]  ffffffffa0143c42 0000000000000004 ffff880119464140 ffffffffa00521e0
+[    7.963477]  ffff880119464000 0000000000000000 ffffffffa0053000 ffff880119464098
+[    7.963479] Call Trace:
+[    7.963488]  [<ffffffffa0143c42>] drm_get_pci_dev+0x92/0x140 [drm]
+[    7.963494]  [<ffffffffa004ca75>] vbox_pci_probe+0x15/0x20 [vboxvideo]
+[    7.963500]  [<ffffffff813b24b5>] local_pci_probe+0x45/0xa0
+[    7.963505]  [<ffffffff813b3745>] ? pci_match_device+0xc5/0xd0
+[    7.963509]  [<ffffffff813b3869>] pci_device_probe+0xd9/0x130
+[    7.963515]  [<ffffffff814a035d>] driver_probe_device+0x12d/0x3e0
+[    7.963518]  [<ffffffff814a06e3>] __driver_attach+0x93/0xa0
+[    7.963522]  [<ffffffff814a0650>] ? __device_attach+0x40/0x40
+[    7.963525]  [<ffffffff8149e2a3>] bus_for_each_dev+0x63/0xa0
+[    7.963528]  [<ffffffff8149fd0e>] driver_attach+0x1e/0x20
+[    7.963531]  [<ffffffff8149f8f0>] bus_add_driver+0x180/0x250
+[    7.963535]  [<ffffffffa0068000>] ? 0xffffffffa0067fff
+[    7.963538]  [<ffffffff814a0d54>] driver_register+0x64/0xf0
+[    7.963541]  [<ffffffffa0068000>] ? 0xffffffffa0067fff
+[    7.963545]  [<ffffffff813b1e4c>] __pci_register_driver+0x4c/0x50
+[    7.963551]  [<ffffffffa0068039>] vbox_init+0x39/0x1000 [vboxvideo]
+[    7.963556]  [<ffffffff8100214a>] do_one_initcall+0xfa/0x1b0
+[    7.963561]  [<ffffffff8105b923>] ? set_memory_nx+0x43/0x50
+[    7.963566]  [<ffffffff810e64a9>] load_module+0x12e9/0x1b70
+[    7.963569]  [<ffffffff810e1ea0>] ? store_uevent+0x40/0x40
+[    7.963573]  [<ffffffff810e6ea6>] SyS_finit_module+0x86/0xb0
+[    7.963579]  [<ffffffff8173dd5d>] system_call_fastpath+0x1a/0x1f
+[    7.963590] Code: 00 00 55 48 89 e5 41 55 49 89 f5 41 54 53 48 89 fb 48 c7 c7 00 d0 16 a0 e8 60 1d 5f e1 48 8b 83 08 02 00 00 48 8b 90 c8 01 00 00 <48> 8b 52 30 48 85 d2 74 17 48 89 df ff d2 85 c0 41 89 c4 0f 85 
+[    7.963597] RIP  [<ffffffffa0141cde>] drm_dev_register+0x2e/0x1e0 [drm]
+[    7.963599]  RSP <ffff880035989b38>
+[    7.963600] CR2: 0000000000000030
+[    7.963603] ---[ end trace d5e7a23005487ee9 ]---
+[    8.273717] random: nonblocking pool is initialized
+
+ * Starting Upstart job to start rpcbind on boot only[74G[ OK ]
+ * Stopping Upstart job to start rpcbind on boot only[74G[ OK ]
+[    8.290913] IPv6: ADDRCONF(NETDEV_UP): eth1: link is not ready
+[    8.292758] e1000: eth1 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+[    8.295095] IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+[    8.295141] IPv6: ADDRCONF(NETDEV_CHANGE): eth1: link becomes ready
+[    8.295973] e1000: eth0 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+[    8.296378] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+ * Starting configure network device[74G[ OK ]
+ * Stopping Mount network filesy[    8.666464] init: Failed to obtain startpar-bridge instance: Unknown parameter: INSTANCE
+stems[74G[ OK ]
+ * Starting RPC portmapper replacement[74G[ OK ]
+ * Starting configure network device[74G[ OK ]
+ * Starting NSM status monitor[74G[ OK ]
+ * Starting Mount network filesystems[74G[ OK ]
+ * Stopping Mount network filesystems[74G[ OK ]
+ * Starting Bridge socket events into upstart[74G[ OK ]
+ * Stopping cold plug devices[74G[ OK ]
+ * Stopping log initial device creation[74G[ OK ]
+ * Starting enable remaining boot-time encrypted block devices[74G[ OK ]
+ * Starting Mount network filesystems[74G[ OK ]
+ * Stopping Mount network filesystems[74G[ OK ]
+cloud-init-nonet[8.92]: static networking is now up
+ * Starting configure network device[74G[ OK ]
+Cloud-init v. 0.7.5 running 'init' at Fri, 03 Aug 2018 06:34:22 +0000. Up 9.09 seconds.
+ci-info: ++++++++++++++++++++++++++Net device info+++++++++++++++++++++++++++
+ci-info: +--------+------+--------------+---------------+-------------------+
+ci-info: | Device |  Up  |   Address    |      Mask     |     Hw-Address    |
+ci-info: +--------+------+--------------+---------------+-------------------+
+ci-info: |   lo   | True |  127.0.0.1   |   255.0.0.0   |         .         |
+ci-info: |  eth1  | True | 192.168.1.14 | 255.255.255.0 | 08:00:27:44:c7:e9 |
+ci-info: |  eth0  | True |  10.0.2.15   | 255.255.255.0 | 08:00:27:54:e0:3b |
+ci-info: +--------+------+--------------+---------------+-------------------+
+ci-info: ++++++++++++++++++++++++++++++Route info++++++++++++++++++++++++++++++
+ci-info: +-------+-------------+----------+---------------+-----------+-------+
+ci-info: | Route | Destination | Gateway  |    Genmask    | Interface | Flags |
+ci-info: +-------+-------------+----------+---------------+-----------+-------+
+ci-info: |   0   |   0.0.0.0   | 10.0.2.2 |    0.0.0.0    |    eth0   |   UG  |
+ci-info: |   1   |   10.0.2.0  | 0.0.0.0  | 255.255.255.0 |    eth0   |   U   |
+ci-info: |   2   | 192.168.1.0 | 0.0.0.0  | 255.255.255.0 |    eth1   |   U   |
+ci-info: +-------+-------------+----------+---------------+-----------+-------+
+ * Starting Signal sysvinit that local filesystems are mounted[74G[ OK ]
+ * Starting configure network device security[74G[ OK ]
+ * Stopping Mount filesystems on boot[74G[ OK ]
+ * Starting D-Bus system message bus[74G[ OK ]
+ * Starting flush early job output to logs[74G[ OK ]
+ * Stopping Failsafe Boot Delay[74G[ OK ]
+ * Starting System V initialisation compatibility[74G[ OK ]
+ * Starting SystemD login management service[74G[ OK ]
+ * Starting NFSv4 id <-> name mapper[74G[ OK ]
+ * Stopping flush early job output to logs[74G[ OK ]
+ * Starting configure virtual network devices[74G[ OK ]
+ * Stopping rpcsec_gss daemon[74G[ OK ]
+ * Starting Pollinate to seed the pseudo random number generator[74G[ OK ]
+ * Starting system logging daemon[74G[ OK ]
+ * Stopping Pollinate to seed the pseudo random number generator[74G[ OK ]
+ * Starting Handle applying cloud-config[74G[ OK ]
+ * Starting Bridge file events into upstart[74G[ OK ]
+ * Starting early crypto disks...       [80G [74G[ OK ]
+ * Starting Docker daemon[74G[ OK ]
+Skipping profile in /etc/apparmor.d/disable: usr.sbin.rsyslogd
+ * Starting AppArmor profiles       [80G [74G[ OK ]
+ * Setting up X socket directories...       [80G [74G[ OK ]
+ * Stopping System V initialisation compatibility[74G[ OK ]
+ * Starting System V runlevel compatibility[74G[ OK ]
+ * Starting deferred execution scheduler[74G[ OK ]
+ * Starting regular background program processing daemon[74G[ OK ]
+ * Starting save kernel messages[74G[ OK ]
+ * Starting OpenSSH server[74G[ OK ]
+ * Stopping save kernel messages[74G[ OK ]
+ * Starting CPU interrupts balancing daemon[74G[ OK ]
+ * Starting automatic crash report generation[74G[ OK ]
+ * Starting ACPI daemon[74G[ OK ]
+Cloud-init v. 0.7.5 running 'modules:config' at Fri, 03 Aug 2018 06:34:23 +0000. Up 9.96 seconds.
+ * Stopping Handle applying cloud-config[74G[ OK ]
+VirtualBox Guest Additions: Starting.
+/etc/rc2.d/S10vboxadd: 256: /etc/rc2.d/S10vboxadd: cannot create : Directory nonexistent
+ * Starting configure network device security[74G[ OK ]
+ * Starting configure network device[74G[ OK ]
+[   13.118521] aufs au_opts_parse:1155:dockerd[1010]: unknown option dirperm1
+ * Starting puppet agent       [80G [74G[ OK ]
+vboxadd-service.sh: Starting VirtualBox Guest Addition service.
+open-vm-tools: not starting as this is not a VMware VM
+landscape-client is not configured, please run landscape-config.
+ * Restoring resolver state...       [80G [74G[ OK ]
+ * Starting chef-client chef-client       [80G [74G[ OK ]
+ * Stopping System V runlevel compatibility[74G[ OK ]
+Cloud-init v. 0.7.5 running 'modules:final' at Fri, 03 Aug 2018 06:34:27 +0000. Up 13.73 seconds.
+Cloud-init v. 0.7.5 finished at Fri, 03 Aug 2018 06:34:27 +0000. Datasource DataSourceNoCloudNet [seed=/var/lib/cloud/seed/nocloud-net][dsmode=net].  Up 13.78 seconds
+
+Ubuntu 14.04.5 LTS vagrant-ubuntu-trusty-64 ttyS0
+
+vagrant-ubuntu-trusty-64 login:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        [[0;32m  OK  [0m] Closed Load/Save RF Kill Switch Status /de/[[0;32m  OK  [0m] Stopped Deferred execution scheduler.
+[[0;32m  OK  [0m] Stopped System Logging Service.
+[[0;32m  OK  [0m] Stopped Accounts Service.
+[[0;32m  OK  [0m] Stopped OpenBSD Secure Shell server.
+[[0;32m  OK  [0m] Stopped Regular background program processing daemon.
+[[0;32m  OK  [0m] Stopped Snappy daemon.
+[[0;32m  OK  [0m] Stopped ACPI event daemon.
+[[0;32m  OK  [0m] Stopped Authenticate and Authorize Users to Run Privileged Tasks.
+[[0;32m  OK  [0m] Stopped Serial Getty on ttyS0.
+[[0;32m  OK  [0m] Stopped Getty on tty1.
+[[0;32m  OK  [0m] Stopped User Manager for UID 1000.
+[[0;32m  OK  [0m] Stopped Session 1 of user vagrant.
+[[0;32m  OK  [0m] Stopped Session 2 of user vagrant.
+[[0;32m  OK  [0m] Stopped Daemon for power management.
+[[0;32m  OK  [0m] Stopped Session 4 of user vagrant.
+[[0;32m  OK  [0m] Stopped D-Bus System Message Bus.
+[[0;32m  OK  [0m] Stopped vboxadd-service.service.
+[[0;32m  OK  [0m] Stopped Unattended Upgrades Shutdown.
+[[0;32m  OK  [0m] Stopped LSB: Set up cgroupfs mounts..
+[[0;32m  OK  [0m] Stopped FUSE filesystem for LXC.
+[[0;32m  OK  [0m] Unmounted /var/lib/lxcfs.
+[[0;32m  OK  [0m] Stopped LSB: Set the CPU Frequency Scaling governor to "ondemand".
+[[0;32m  OK  [0m] Stopped LSB: Record successful boot for GRUB.
+[[0;32m  OK  [0m] Stopped LSB: MD monitoring daemon.
+[[0;32m  OK  [0m] Stopped LSB: daemon to balance interrupts for SMP systems.
+[[0;32m  OK  [0m] Stopped LXD - container startup/shutdown.
+[[0;32m  OK  [0m] Stopped LSB: automatic crash report generation.
+         Stopping vboxadd.service...
+[[0;32m  OK  [0m] Removed slice User Slice of vagrant.
+         Stopping Login Service...
+[[0;32m  OK  [0m] Removed slice system-getty.slice.
+         Stopping Permit User Sessions...
+[[0;32m  OK  [0m] Removed slice system-serial\x2dgetty.slice.
+[[0;32m  OK  [0m] Stopped /etc/rc.local Compatibility.
+[[0;32m  OK  [0m] Unmounted /home/vagrant/Nexus/python/django/django-map-widgets.
+[[0;32m  OK  [0m] Unmounted /home/vagrant/Nexus/python/django/django-test-bench.
+[[0;32m  OK  [0m] Unmounted /home/vagrant/Nexus/python/pelican/jeanguzmancom.
+[[0;32m  OK  [0m] Unmounted /home/vagrant/Tixif/vivas-seduction-api.
+[[0;32m  OK  [0m] Unmounted /home/vagrant/Tixif/vivasseduction.com.
+[[0;32m  OK  [0m] Unmounted /home/vagrant/Tixif/legsa-ecommerce.
+[[0;32m  OK  [0m] Unmounted /home/vagrant/Nexus/python/wagtail.
+[[0;32m  OK  [0m] Unmounted /home/vagrant/Tixif/custodian-api.
+[[0;32m  OK  [0m] Unmounted /home/vagrant/Ahinko/geo-tracker.
+[[0;32m  OK  [0m] Unmounted /home/vagrant/Ceroic/cyrious.com.
+[[0;32m  OK  [0m] Unmounted /home/vagrant/Tixif/oscar-tixif.
+[[0;32m  OK  [0m] Unmounted /home/vagrant/Ahinko/fidcrm-api.
+[[0;32m  OK  [0m] Unmounted /home/vagrant/Tixif/scp-api-v2.
+[[0;32m  OK  [0m] Unmounted /home/vagrant/Tixif/census-api.
+[[0;32m  OK  [0m] Unmounted /home/vagrant/Ahinko/pof-api.
+[[0;32m  OK  [0m] Unmounted /home/vagrant/Ahinko/dcs-api.
+[[0;32m  OK  [0m] Unmounted /home/vagrant/shared_folder.
+[[0;32m  OK  [0m] Unmounted /home/vagrant/Tixif/scp-api.
+[[0;32m  OK  [0m] Unmounted /home/vagrant/provisioning.
+[[0;32m  OK  [0m] Unmounted /vagrant.
+[[0;32m  OK  [0m] Stopped Login Service.
+[[0;32m  OK  [0m] Stopped Docker Application Container Engine.
+[[0;32m  OK  [0m] Stopped vboxadd.service.
+[[0;32m  OK  [0m] Stopped Permit User Sessions.
+[[0;32m  OK  [0m] Stopped target Remote File Systems.
+[[0;32m  OK  [0m] Stopped target Remote File Systems (Pre).
+         Stopping Login to default iSCSI targets...
+[[0;32m  OK  [0m] Stopped target User and Group Name Lookups.
+[[0;32m  OK  [0m] Stopped target Basic System.
+[[0;32m  OK  [0m] Stopped target Slices.
+[[0;32m  OK  [0m] Removed slice User and Session Slice.
+[[0;32m  OK  [0m] Stopped target Sockets.
+[[0;32m  OK  [0m] Closed ACPID Listen Socket.
+[[0;32m  OK  [0m] Closed Socket activation for snappy daemon.
+[[0;32m  OK  [0m] Closed Docker Socket for the API.
+[[0;32m  OK  [0m] Closed LXD - unix socket.
+[[0;32m  OK  [0m] Closed Syslog Socket.
+[[0;32m  OK  [0m] Closed UUID daemon activation socket.
+[[0;32m  OK  [0m] Closed D-Bus System Message Bus Socket.
+[[0;32m  OK  [0m] Stopped target Paths.
+[[0;32m  OK  [0m] Stopped Forward Password Requests to Wall Directory Watch.
+[[0;32m  OK  [0m] Stopped Dispatch Password Requests to Console Directory Watch.
+[[0;32m  OK  [0m] Stopped ACPI Events Check.
+[[0;32m  OK  [0m] Stopped target System Initialization.
+[[0;32m  OK  [0m] Stopped target Swap.
+         Stopping Load/Save Random Seed...
+[[0;32m  OK  [0m] Stopped target Encrypted Volumes.
+         Stopping Update UTMP about System Boot/Shutdown...
+[[0;32m  OK  [0m] Stopped Load/Save Random Seed.
+[[0;32m  OK  [0m] Stopped Update UTMP about System Boot/Shutdown.
+[[0;32m  OK  [0m] Stopped Create Volatile Files and Directories.
+[[0;32m  OK  [0m] Stopped Login to default iSCSI targets.
+         Stopping iSCSI initiator daemon (iscsid)...
+[[0;32m  OK  [0m] Stopped iSCSI initiator daemon (iscsid).
+[[0;32m  OK  [0m] Stopped target Network is Online.
+[[0;32m  OK  [0m] Stopped Initial cloud-init job (metadata service crawler).
+[[0;32m  OK  [0m] Stopped target Network.
+         Stopping Raise network interfaces...
+[[0;32m  OK  [0m] Stopped Raise network interfaces.
+[[0;32m  OK  [0m] Stopped target Network (Pre).
+[[0;32m  OK  [0m] Stopped Initial cloud-init job (pre-networking).
+[[0;32m  OK  [0m] Stopped target Local File Systems.
+         Unmounting /run/user/1000...
+[[0;32m  OK  [0m] Stopped Apply Kernel Variables.
+[[0;32m  OK  [0m] Stopped Load Kernel Modules.
+[[0;32m  OK  [0m] Unmounted /run/user/1000.
+[[0;32m  OK  [0m] Reached target Unmount All Filesystems.
+[[0;32m  OK  [0m] Stopped target Local File Systems (Pre).
+[[0;32m  OK  [0m] Stopped Remount Root and Kernel File Systems.
+         Stopping Monitoring of LVM2 mirrors... dmeventd or progress polling...
+[[0;32m  OK  [0m] Stopped Create Static Device Nodes in /dev.
+[[0;32m  OK  [0m] Reached target Shutdown.
+[ 2237.527 rbo: Power down
