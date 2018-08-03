@@ -46,7 +46,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git nvm tmux pip python virtualenv virtualenvwrapper docker-compose bower gulp)
-plugins+=(zsh-navigation-tools npm ssh-agent git-flow)
+plugins+=(zsh-navigation-tools npm ssh-agent git-flow docker)
 
 # User configuration
 
@@ -54,10 +54,10 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # BULLETTRAIN
+BULLETTRAIN_PROMPT_ORDER=(time status dir git virtualenv aws)
 BULLETTRAIN_PROMPT_CHAR=→
 BULLETTRAIN_NVM_PREFIX=♦
-BULLETTRAIN_PROMPT_ORDER=(time status dir git virtualenv aws)
-BULLETTRAIN_TIME_12HR=true
+BULLETTRAIN_TIME_12HR=false
 BULLETTRAIN_STATUS_EXIT_SHOW=true
 BULLETTRAIN_EXEC_TIME_SHOW=true
 BULLETTRAIN_DIR_EXTENDED=1
@@ -100,7 +100,23 @@ alias zshrc="vim ~/.zshrc"
 # export TERM="xterm-256color"
 
 # tmux fix for colors
-# alias tmux='tmux -2'
+alias tmux='tmux -2'
+
+# virtualenv workon_home variable
+export WORKON_HOME=$HOME/.virtualenvs
+# virtualenv workon_home variable
+
+# Project home for virtualenvwrapper
+export PROJECT_HOME=$HOME/repos
+# Project home for virtualenvwrapper
+
+# virtualenv source
+source /usr/local/bin/virtualenvwrapper.sh
+# virtualenv source
+
+# virtualenv workon_home variable
+source /usr/local/bin/aws_zsh_completer.sh
+# virtualenv workon_home variable
 
 # zsh widget biding for history, places and kill
 autoload znt-history-widget
@@ -110,3 +126,34 @@ zle -N znt-cd-widget
 bindkey "^S" znt-cd-widget
 zle -N znt-kill-widget
 bindkey "^Y" znt-kill-widget
+
+# tmuxinator completion
+source ~/.bin/tmuxinator.zsh
+# tmuxinator completion
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# loads and active NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+# loads and active NVM
+
+# NVM deeper shell integration
+# Calling nvm use automatically in a directory with a .nvmrc file
+#autoload -U add-zsh-hook
+#load-nvmrc() {
+#  if [[ -f .nvmrc && -r .nvmrc ]]; then
+#    nvm use
+#  elif [[ $(nvm version) != $(nvm version default)  ]]; then
+#    echo "Reverting to nvm default version"
+#    nvm use default
+#  fi
+#}
+#add-zsh-hook chpwd load-nvmrc
+#load-nvmrc
+# NVM deeper shell integration
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
