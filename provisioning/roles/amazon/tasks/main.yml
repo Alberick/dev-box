@@ -2,17 +2,6 @@
   become: true
   shell: pip install {{ item }}
   args:
-    executable: "{{zsh}}"
-  with_items:
+    executable: '{{zsh}}'
+  loop:
     - awscli
-
-- name: Add AWS autocompleter to zshrc
-  blockinfile:
-    dest: ~/.zshrc
-    create: yes
-    marker: ''
-    insertafter: EOF
-    block: |
-      # virtualenv workon_home variable
-      source /usr/local/bin/aws_zsh_completer.sh
-      # virtualenv workon_home variable
