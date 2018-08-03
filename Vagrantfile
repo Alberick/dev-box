@@ -95,7 +95,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     # box customization
     config.vm.provider :virtualbox do |vb|
-        vb.name = 'dev-box'
+        vb.name = 'dev-box-xenial'
         vb.cpus = 2
         vb.customize ["modifyvm", :id, "--memory", "4096"]
     end

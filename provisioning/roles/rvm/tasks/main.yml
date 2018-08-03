@@ -1,43 +1,41 @@
 ---
-- name: Import keys
-  shell: gpg --keyserver {{rvm}}
-  args:
-    executable: "{{zsh}}"
+- name: Prepare the system
+  become: true
+  apt:
+    name: software-properties-common
+    state: latest
 
-- name: Download rvm
-  get_url: >
-   url=https://get.rvm.io
-   dest=/tmp/rvm
+- name: Add PPA
+  become: true
+  apt_repository:
+    repo: ppa:rael-gc/rvm
+    state: present
+
+- name: update package repository and upgrade packages
+  become: true
+  apt:
+    update-cache: yes
+    upgrade: dist
 
 - name: Install rvm
-  shell: bash rvm stable --ruby=1.9.3
-  args:
-    chdir: /tmp
-    executable: "{{zsh}}"
+  become: true
+  apt:
+    name: rvm
+    state: latest
 
-- name: Install global gems
-  shell: bash -lc "gem install {{item}}"
-  with_items:
-    - tmuxinator
-  args:
-    executable: "{{zsh}}"
+- name: Add current user to rvm group
+  become: true
+  user:
+    name: vagrant
+    append: yes
+    groups: rvm
 
 - name: Create .bin directory to hold tmuxinator.zsh completion
-  file: >
-    path=~/.bin
-    state=directory
+  file:
+    path: ~/.bin
+    state: directory
 
 - name: Download completion file from the repo
-  get_url: >
-    url={{mux_completion}}
-    dest=~/.bin/
-
-- name: Add tmuxinator to zshrc
-  blockinfile:
-    dest: ~/.zshrc
-    marker: ''
-    insertafter: EOF
-    block: |
-      # tmuxinator completion
-      source ~/.bin/tmuxinator.zsh
-      # tmuxinator completion
+  get_url:
+    url: "{{mux_completion}}"
+    dest: ~/.bin/

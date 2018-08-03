@@ -1,31 +1,33 @@
 ---
 - name: Install zsh
-  apt: name=zsh
+  apt:
+    name: zsh
   become: true
 
 - name: Clone oh-my-zsh repo
-  git: >
-    repo={{zsh_repo}}
-    dest=~/.oh-my-zsh
+  git:
+    repo: '{{zsh_repo}}'
+    dest: ~/.oh-my-zsh
 
 - name: symlink zshrc
-  copy: >
-   src=zshrc
-   dest=~/.zshrc
+  file:
+    src: ~/provisioning/roles/zsh/files/zshrc
+    dest: ~/.zshrc
+    state: link
 
 - name: Set zsh as default shell
   become: true
-  user: >
-    shell=/bin/zsh
-    name=vagrant
+  user:
+    shell: /bin/zsh
+    name: vagrant
 
 - name: Download theme
-  git: >
-   repo={{bullet_repo}}
-   dest=~/.oh-my-zsh/custom/themes/bullet-train
+  git:
+    repo: '{{bullet_repo}}'
+    dest: ~/.oh-my-zsh/custom/themes/bullet-train
 
 - name: Create symlink to theme
-  file: >
-    src=~/.oh-my-zsh/custom/themes/bullet-train/bullet-train.zsh-theme
-    dest=~/.oh-my-zsh/custom/themes/bullet-train.zsh-theme
-    state=link
+  file:
+    src: ~/.oh-my-zsh/custom/themes/bullet-train/bullet-train.zsh-theme
+    dest: ~/.oh-my-zsh/custom/themes/bullet-train.zsh-theme
+    state: link
