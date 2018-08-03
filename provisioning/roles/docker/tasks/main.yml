@@ -2,58 +2,53 @@
 - name: Ensure apt-transport-https ca-certificates are installed
   become: true
   apt:
-    name={{ item }}
-    state=latest
-  with_items:
+    name: '{{ item }}'
+    state: latest
+  loop:
     - apt-transport-https
     - ca-certificates
-    - linux-image-extra-{{ansible_kernel}}
-    - linux-image-extra-virtual
+    - software-properties-common
 
 - name: Add docker gpg key
   become: true
-  apt_key: >
-    keyserver={{docker_keyserver}}
-    id={{docker_key}}
+  apt_key:
+    url: '{{docker_keyserver}}'
+    id: '{{docker_key}}'
 
 - name: Add docker entry for ubuntu
   become: true
-  apt_repository: >
-    repo='{{docker_source}}'
-    filename=docker.list
+  apt_repository:
+    repo: '{{docker_source}}'
+    filename: docker.list
+
+- name: update package repository and upgrade packages
+  become: true
+  apt:
+    update-cache: yes
+    upgrade: dist
 
 - name: Install docker
   become: true
-  apt: >
-    name=docker-engine
+  apt:
+    name: docker-ce
 
 - name: Add current user to docker group
   become: true
-  user: >
-    name=vagrant
-    append=yes
-    groups=docker
+  user:
+    name: vagrant
+    append: yes
+    groups: docker
   notify:
-    - restart docker
-
-- name: Fetch kernel name
-  shell: uname -s
-  ignore_errors: yes
-  register: kernel
-
-- name: Fetch machine hardware name
-  shell: uname -m
-  ignore_errors: yes
-  register: machine
+  - restart docker
 
 - name: Download docker-compose
   become: true
-  get_url: >
-    url={{docker_compose_url}}
-    dest={{docker_compose_path}}
+  get_url:
+    url: '{{docker_compose_url}}'
+    dest: '{{docker_compose_path}}'
 
 - name: Set docker-compose permissions
   become: true
-  file: >
-    path={{docker_compose_path}}
-    mode=0755
+  file:
+    path: '{{docker_compose_path}}'
+    mode: 0755
