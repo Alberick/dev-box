@@ -1,53 +1,25 @@
 ---
 - name: Install tmux necessary packages
   become: true
-  apt: >
-   name={{ item }}
-   state=latest
-  with_items:
-    - libncurses5-dev
-    - libncursesw5-dev
-    - upower
-    - xdg-utils
-
-- name: Download libevent and tmux from release tarball
-  get_url: >
-   url={{item}}
-   dest=/tmp
-  with_items:
-    - "{{libevent_url}}"
-    - "{{tmux_url}}"
-
-- name: Extract libevent and tmux from tarball on ~/
-  unarchive: >
-   src=/tmp/{{item | basename}}
-   dest=/tmp
-  with_items:
-    - "{{libevent_url}}"
-    - "{{tmux_url}}"
-
-- name: Configure and build libevent and tmux
-  shell: "{{item[1]}}"
-  args:
-    chdir: "/tmp/{{item[0]}}"
-    executable: "{{zsh}}"
-  with_nested:
-    - ["{{libevent_folder}}", "{{tmux_folder}}"]
-    - ['./configure && make', 'sudo make install']
+  apt:
+   name: '{{ item }}'
+   state: latest
+  loop:
+    - tmux
 
 - name: Symlink settings
-  file: >
-    src=~/provisioning/roles/tmux/files/tmux.conf
-    dest=~/.tmux.conf
-    state=link
+  file:
+    src: ~/provisioning/roles/tmux/files/tmux.conf
+    dest: ~/.tmux.conf
+    state: link
 
 - name: Install tmux package manager
-  git: >
-   repo={{tpm}}
-   dest=~/.tmux/plugins/tpm
+  git:
+   repo: '{{tpm}}'
+   dest: ~/.tmux/plugins/tpm
 
 - name: Reload TMUX environment so TPM is sourced
   shell: tmux source ~/.tmux.conf
   ignore_errors: True
   args:
-    executable: "{{zsh}}"
+    executable: '{{zsh}}'
