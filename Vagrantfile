@@ -8,6 +8,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     # BOX
     config.vm.box = "ubuntu/bionic64"
+    config.disksize.size = "50GB"
     # BOX
 
     config.ssh.forward_agent = true
