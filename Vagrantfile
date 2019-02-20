@@ -19,7 +19,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # VAGRANT SYNC FOLDERS
 
     # PUBLIC NETWORK
-    config.vm.network "public_network"
+    config.vm.network "public_network", ip: "192.168.1.10"
     # PUBLIC NETWORK
 
     # FORWARDED PORTS
@@ -36,9 +36,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # FORWARDED PORTS
 
     # BOX CUSTOMIZATION
-    config.vm.provider :virtualbox do |vb|
+    config.vm.provider "virtualbox" do |vb|
         vb.name = 'dev-box'
-        vb.cpus = 2
+        vb.cpus = 4
         vb.customize ["modifyvm", :id, "--memory", "4096"]
     end
     # BOX CUSTOMIZATION
