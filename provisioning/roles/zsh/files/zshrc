@@ -57,9 +57,10 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # BULLETTRAIN
-BULLETTRAIN_PROMPT_ORDER=(time status dir git virtualenv aws)
+BULLETTRAIN_PROMPT_ORDER=(time status dir git nvm virtualenv)
 BULLETTRAIN_PROMPT_CHAR=→
 BULLETTRAIN_NVM_PREFIX=♦
+BULLETTRAIN_VIRTUALENV_PREFIX=@
 BULLETTRAIN_TIME_12HR=false
 BULLETTRAIN_STATUS_EXIT_SHOW=true
 BULLETTRAIN_EXEC_TIME_SHOW=true
