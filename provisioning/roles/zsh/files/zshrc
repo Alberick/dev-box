@@ -52,8 +52,8 @@ plugins=(git zsh-nvm tmux pip python virtualenv virtualenvwrapper pipenv docker-
 plugins+=(zsh-navigation-tools npm ssh-agent git-flow docker npx)
 
 # User configuration
-
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+# export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+export PATH="/home/$USER/.local/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # BULLETTRAIN
