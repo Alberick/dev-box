@@ -33,9 +33,3 @@
     src: ~/.vim/colors/hybrid/colors/hybrid.vim
     dest: ~/.vim/colors/hybrid.vim
     state: link
-
-- name: Copy ackrc to home
-  file:
-   src: ~/provisioning/roles/vim/files/ackrc
-   dest: ~/.ackrc
-   state: link
