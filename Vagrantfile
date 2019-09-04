@@ -19,21 +19,22 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # VAGRANT SYNC FOLDERS
 
     # PUBLIC NETWORK
-    config.vm.network "public_network", ip: "192.168.1.10"
+    config.vm.network "public_network"
     # PUBLIC NETWORK
 
     # FORWARDED PORTS
     for i in 0..5
-	    config.vm.network "forwarded_port", guest: (8000 + i), host: (8000 + i)
+      config.vm.network "forwarded_port", guest: (8000 + i), host: (8000 + i)
     end
 
     config.vm.network "forwarded_port", guest: 1433, host: 1433 
     config.vm.network "forwarded_port", guest: 2376, host: 2376 
-    config.vm.network "forwarded_port", guest: 8080, host: 8080 
-    config.vm.network "forwarded_port", guest: 3306, host: 3306 
-    config.vm.network "forwarded_port", guest: 5432, host: 5432 
-    config.vm.network "forwarded_port", guest: 53703, host: 53703 
+    config.vm.network "forwarded_port", guest: 8080, host: 8080
     # FORWARDED PORTS
+    
+    if Vagrant.has_plugin?("vagrant-vbguest")
+	    config.vbguest.auto_update = false  
+    end
 
     # BOX CUSTOMIZATION
     config.vm.provider "virtualbox" do |vb|
