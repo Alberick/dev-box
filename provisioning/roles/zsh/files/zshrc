@@ -48,8 +48,8 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git nvm tmux pip python virtualenv virtualenvwrapper docker-compose bower gulp)
-plugins+=(zsh-navigation-tools npm ssh-agent git-flow docker)
+plugins=(git zsh-nvm tmux pip python virtualenv virtualenvwrapper pipenv docker-compose)
+plugins+=(zsh-navigation-tools npm ssh-agent git-flow docker npx)
 
 # User configuration
 
