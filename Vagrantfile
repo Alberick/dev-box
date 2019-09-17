@@ -19,7 +19,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # VAGRANT SYNC FOLDERS
 
     # PUBLIC NETWORK
-    config.vm.network "public_network"
+    config.vm.network "private_network", ip: "192.168.2.10"
     # PUBLIC NETWORK
 
     # FORWARDED PORTS
