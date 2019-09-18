@@ -48,6 +48,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.provision 'ansible_local' do |ansible|
         ansible.playbook = 'provisioning/playbook.yml'
         ansible.install_mode = "pip"
+        ansible.pip_install_cmd = "curl https://bootstrap.pypa.io/get-pip.py | sudo python"
         ansible.version = "2.2.1.0"
     end
     # ANSIBLE-LOCAL PROVISIONING
