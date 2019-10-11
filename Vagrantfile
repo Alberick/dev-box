@@ -14,8 +14,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.ssh.forward_agent = true
 
     # VAGRANT SYNC FOLDERS
-    config.vm.synced_folder "./provisioning", "/home/vagrant/provisioning"
     config.vm.synced_folder "../shared_folder", "/home/vagrant/shared_folder"
+
+    config.vm.synced_folder "D:/Documents/Stargate/NetCon/prototype-server/", "/home/vagrant/Stargate/NetCon/prototype-server/"
     # VAGRANT SYNC FOLDERS
 
     # PUBLIC NETWORK
