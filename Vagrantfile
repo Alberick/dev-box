@@ -15,8 +15,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     # VAGRANT SYNC FOLDERS
     config.vm.synced_folder "../shared_folder", "/home/vagrant/shared_folder"
-
-    config.vm.synced_folder "D:/Documents/Stargate/NetCon/prototype-server/", "/home/vagrant/Stargate/NetCon/prototype-server/"
     # VAGRANT SYNC FOLDERS
 
     # PUBLIC NETWORK
@@ -42,14 +40,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         vb.name = 'dev-box'
         vb.cpus = 4
         vb.customize ["modifyvm", :id, "--memory", "4096"]
+        vb.linked_clone = true
     end
     # BOX CUSTOMIZATION
 
     # ANSIBLE-LOCAL PROVISIONING
     config.vm.provision 'ansible_local' do |ansible|
         ansible.playbook = 'provisioning/playbook.yml'
-        ansible.install_mode = "pip"
-        ansible.pip_install_cmd = "curl https://bootstrap.pypa.io/get-pip.py | sudo python"
+        ansible.install_mode = "default"
     end
     # ANSIBLE-LOCAL PROVISIONING
 end

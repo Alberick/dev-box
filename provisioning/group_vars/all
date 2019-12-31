@@ -16,7 +16,7 @@ tpm: https://github.com/tmux-plugins/tpm
 mux_completion: https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh
 
 # vim repo
-vim_repo: https://github.com/radyz/vim-radyz.git
+vim_repo: https://github.com/tixif-ni/dev-vim.git
 
 # python pip_file
 pip_file: get-pip.py
@@ -35,10 +35,10 @@ docker_keyserver: https://download.docker.com/linux/ubuntu/gpg
 docker_key: 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
 
 # docker source for os
-docker_source: "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+docker_source: "deb https://download.docker.com/linux/ubuntu xenial stable"
 
 # docker-compose
-docker_compose_url: https://github.com/docker/compose/releases/download/1.22.0/docker-compose-Linux-x86_64
+docker_compose_url: https://github.com/docker/compose/releases/download/1.25.0/docker-compose-Linux-x86_64
 docker_compose_path: /usr/local/bin/docker-compose
 
 # android version

@@ -1,30 +1,32 @@
 ---
-- name: update package repository and upgrade packages
-  become: true
-  apt:
-    update-cache: yes
-    cache_valid_time: 1800
-    upgrade: dist
+- name: update package repository
+  apt: update-cache=yes cache_valid_time=1800
+  become: yes
 
 - name: Install common packages
-  become: true
   apt:
-    name: '{{ item }}'
+    name: [
+      ncdu,
+      ufw,
+      dos2unix,
+      unzip,
+      curl,
+      wget,
+      htop,
+      moreutils,
+      libevent-dev,
+      libpq-dev,
+      tree,
+      whois,
+      make,
+      gettext,
+      upower,
+      apt-transport-https,
+      ca-certificates,
+      software-properties-common,
+      apache2-utils,
+      nfs-common,
+      rng-tools
+    ]
     state: latest
-  loop:
-    - unzip
-    - curl
-    - wget
-    - htop
-    - moreutils
-    - libevent-dev
-    - libpq-dev
-    - python-dev
-    - python3-dev
-    - python3-setuptools
-    - python-psycopg2
-    - tree
-    - whois
-    - make
-    - gettext
-    - upower
+  become: yes

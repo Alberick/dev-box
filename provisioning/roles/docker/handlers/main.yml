@@ -4,3 +4,7 @@
   service:
     name: docker
     state: restarted
+
+- name: restart nfs
+  service: name=docker-volume-netshare state=restarted
+  become: yes

@@ -8,7 +8,6 @@
   shell: bash nvm
   args:
     chdir: /tmp
-    executable: '{{zsh}}'
 
 - name: Copy global nvmrc
   copy:

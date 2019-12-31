@@ -1,17 +1,10 @@
 ---
 - name: Install git from package repository
+  apt: name=git-core
   become: true
-  apt:
-    name: '{{item}}'
-  with_items:
-    - git-core
-    - git-flow
 
 - name: Copy global git configuration
-  file: >
-    src=~/provisioning/roles/git/files/{{item}}
-    dest=~/.{{item}}
-    state=link
-  with_items:
-    - "gitconfig"
-    - "gitignore"
+  copy: src=gitconfig dest=~/.gitconfig
+
+- name: Copy global git ignore
+  copy: src=gitignore dest=~/.gitignore

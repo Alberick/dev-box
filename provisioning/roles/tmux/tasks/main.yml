@@ -9,7 +9,7 @@
 
 - name: Symlink settings
   file:
-    src: ~/provisioning/roles/tmux/files/tmux.conf
+    src: /vagrant/provisioning/roles/tmux/files/tmux.conf
     dest: ~/.tmux.conf
     state: link
 

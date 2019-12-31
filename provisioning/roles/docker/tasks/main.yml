@@ -1,14 +1,4 @@
 ---
-- name: Ensure apt-transport-https ca-certificates are installed
-  become: true
-  apt:
-    name: '{{ item }}'
-    state: latest
-  loop:
-    - apt-transport-https
-    - ca-certificates
-    - software-properties-common
-
 - name: Add docker gpg key
   become: true
   apt_key:
@@ -31,6 +21,7 @@
   become: true
   apt:
     name: docker-ce
+    state: present
 
 - name: Add current user to docker group
   become: true
@@ -46,9 +37,17 @@
   get_url:
     url: '{{docker_compose_url}}'
     dest: '{{docker_compose_path}}'
+    mode: +x
 
-- name: Set docker-compose permissions
-  become: true
-  file:
-    path: '{{docker_compose_path}}'
-    mode: 0755
+- name: Download nfs plugin
+  become: yes
+  get_url:
+    url: https://github.com/ContainX/docker-volume-netshare/releases/download/v0.34/docker-volume-netshare_0.34_amd64.deb
+    dest: /opt/docker-volume-netshare.deb
+
+- name: Install nfs plugin
+  become: yes
+  apt:
+    deb: /opt/docker-volume-netshare.deb
+  notify:
+    - restart nfs

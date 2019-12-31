@@ -2,7 +2,7 @@
 - name: Install zsh
   apt:
     name: zsh
-  become: true
+  become: yes
 
 - name: Clone oh-my-zsh repo
   git:
@@ -11,12 +11,12 @@
 
 - name: symlink zshrc
   file:
-    src: ~/provisioning/roles/zsh/files/zshrc
+    src: /vagrant/provisioning/roles/zsh/files/zshrc
     dest: ~/.zshrc
     state: link
 
 - name: Set zsh as default shell
-  become: true
+  become: yes
   user:
     shell: /bin/zsh
     name: vagrant
