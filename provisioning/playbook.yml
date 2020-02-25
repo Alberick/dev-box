@@ -2,7 +2,14 @@
 - hosts: all
   remote_user: vagrant
   roles:
+    - common
+    - git
+    - zsh
+    - python
+    - tmux
     - vim
+    - nvm
+    - docker
 
 #If roles/x/tasks/main.yml exists, tasks listed therein will be added to the play
 #If roles/x/handlers/main.yml exists, handlers listed therein will be added to the play
